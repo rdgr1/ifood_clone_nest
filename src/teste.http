@@ -1,0 +1,263 @@
+### USER
+POST http://localhost:3000/user
+Content-Type: application/json
+
+{
+  "nome": "João da Silva",
+  "email": "joao@email.com",
+  "senha": "123456",
+  "tipo": "cliente"
+}
+### USER
+GET http://localhost:3000/user
+### USER
+GET http://localhost:3000/user/1
+### USER
+PUT http://localhost:3000/user/1
+Content-Type: application/json
+
+{
+  "nome": "João da Silva Atualizado"
+}
+### USER
+DELETE http://localhost:3000/user/1
+
+### RESTAURANT
+POST http://localhost:3000/restaurant
+Content-Type: application/json
+
+{
+  "nome": "Pizza Place",
+  "endereco": "Rua A, 123",
+  "telefone": "99999-9999",
+  "tipo": "fast_food"
+}
+### RESTAURANT
+
+GET http://localhost:3000/restaurant
+### RESTAURANT
+
+GET http://localhost:3000/restaurant/1
+### RESTAURANT
+
+PUT http://localhost:3000/restaurant/1
+Content-Type: application/json
+
+{
+  "nome": "Pizza Place Atualizado"
+}
+### RESTAURANT
+
+DELETE http://localhost:3000/restaurant/1
+
+### PRODUCT
+POST http://localhost:3000/product
+Content-Type: application/json
+
+{
+  "nome": "Pizza Calabresa",
+  "preco": 39.90,
+  "restaurantId": 1,
+  "categoryId": 1
+}
+### PRODUCT
+
+GET http://localhost:3000/product
+### PRODUCT
+
+GET http://localhost:3000/product/1
+### PRODUCT
+
+PUT http://localhost:3000/product/1
+Content-Type: application/json
+
+{
+  "preco": 42.50
+}
+### PRODUCT
+
+DELETE http://localhost:3000/product/1
+
+### CATEGORY
+POST http://localhost:3000/category
+Content-Type: application/json
+
+{
+  "nome": "Pizzas"
+}
+### CATEGORY
+
+GET http://localhost:3000/category
+### CATEGORY
+
+GET http://localhost:3000/category/1
+### CATEGORY
+
+PUT http://localhost:3000/category/1
+Content-Type: application/json
+
+{
+  "nome": "Massas"
+}
+### CATEGORY
+
+DELETE http://localhost:3000/category/1
+
+### ORDER
+POST http://localhost:3000/order
+Content-Type: application/json
+
+{
+  "userId": 1,
+  "restaurantId": 1,
+  "status": "pendente"
+}
+### ORDER
+
+GET http://localhost:3000/order
+### ORDER
+
+GET http://localhost:3000/order/1
+### ORDER
+
+PUT http://localhost:3000/order/1
+Content-Type: application/json
+
+{
+  "status": "confirmado"
+}
+### ORDER
+
+DELETE http://localhost:3000/order/1
+
+### ORDER-ITEM
+POST http://localhost:3000/order-item
+Content-Type: application/json
+
+{
+  "orderId": 1,
+  "productId": 1,
+  "quantidade": 2
+}
+### ORDER-ITEM
+
+GET http://localhost:3000/order-item
+### ORDER-ITEM
+
+GET http://localhost:3000/order-item/1
+### ORDER-ITEM
+
+PUT http://localhost:3000/order-item/1
+Content-Type: application/json
+
+{
+  "quantidade": 3
+}
+### ORDER-ITEM
+
+DELETE http://localhost:3000/order-item/1
+
+### ADDRESS
+POST http://localhost:3000/address
+Content-Type: application/json
+
+{
+  "userId": 1,
+  "street": "Rua das Flores",
+  "number": "100",
+  "neighborhood": "Centro",
+  "city": "Brasília",
+  "state": "DF",
+  "zipCode": "70000-000",
+  "isDefault": true
+}
+### ADDRESS
+
+GET http://localhost:3000/address
+### ADDRESS
+
+GET http://localhost:3000/address/1
+### ADDRESS
+
+PUT http://localhost:3000/address/1
+Content-Type: application/json
+
+{
+  "city": "Taguatinga"
+}
+### ADDRESS
+
+DELETE http://localhost:3000/address/1
+
+### PAYMENT
+POST http://localhost:3000/payment
+Content-Type: application/json
+
+{
+  "amount": 79.80,
+  "method": "cartao_credito",
+  "status": "aprovado",
+  "orderId": 1
+}
+### PAYMENT
+
+GET http://localhost:3000/payment
+### PAYMENT
+
+GET http://localhost:3000/payment/1
+### PAYMENT
+
+PUT http://localhost:3000/payment/1
+Content-Type: application/json
+
+{
+  "status": "estornado"
+}
+### PAYMENT
+
+DELETE http://localhost:3000/payment/1
+
+### FAVORITE RESTAURANT
+POST http://localhost:3000/favorite-restaurant
+Content-Type: application/json
+
+{
+  "userId": 1,
+  "restaurantId": 1
+}
+### FAVORITE RESTAURANT
+
+GET http://localhost:3000/favorite-restaurant
+### FAVORITE RESTAURANT
+
+GET http://localhost:3000/favorite-restaurant/1
+### FAVORITE RESTAURANT
+
+DELETE http://localhost:3000/favorite-restaurant/1
+
+### REVIEW
+POST http://localhost:3000/review
+Content-Type: application/json
+
+{
+  "userId": 1,
+  "restaurantId": 1,
+  "rating": 5,
+  "comentario": "Ótima comida!"
+}
+### REVIEW
+GET http://localhost:3000/review
+### REVIEW
+GET http://localhost:3000/review/1
+### REVIEW
+
+PUT http://localhost:3000/review/1
+Content-Type: application/json
+
+{
+  "rating": 4,
+  "comentario": "Muito bom, mas pode melhorar o atendimento."
+}
+### REVIEW
+
+DELETE http://localhost:3000/review/1
