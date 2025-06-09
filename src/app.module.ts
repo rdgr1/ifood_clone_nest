@@ -13,30 +13,30 @@ import { PaymentModule } from './payment/payment.module';
 import { ProductModule } from './product/product.module';
 import { RestaurantModule } from './restaurant/restaurant.module';
 import { ReviewModule } from './review/review.module';
-import { UserModule } from './user/user.module';  // <-- importe o módulo, não a entidade
+import { UserModule } from './user/user.module';  
 
 @Module({
-  imports: [
+  imports:[
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: process.env.DB_HOST || 'localhost',
-      port: parseInt(process.env.DB_PORT, 10) || 5432,
-      username: process.env.DB_USERNAME || 'rdgr777',
-      password: process.env.DB_PASSWORD || '995647',
-      database: process.env.DB_DATABASE || 'ifood_clone',
+      host: 'localhost',
+      port: 5432,
+      username: 'rdgr777',
+      password: '995647',
+      database: 'ifood_clone',
       synchronize: true,
-      autoLoadEntities: true,  // já carrega todas as entidades registradas nos módulos
+      autoLoadEntities: true,
     }),
     AddressModule,
     CategoryModule,
-    FavoritRestaurantModule,  // nome corrigido do módulo
+    FavoritRestaurantModule, 
     OrderModule,
     OrderItemModule,
     PaymentModule,
     ProductModule,
     RestaurantModule,
     ReviewModule,
-    UserModule,                // Adicione aqui
+    UserModule,              
   ],
   controllers: [AppController],
   providers: [AppService],
