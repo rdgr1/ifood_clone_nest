@@ -14,6 +14,7 @@ import { ProductModule } from './product/product.module';
 import { RestaurantModule } from './restaurant/restaurant.module';
 import { ReviewModule } from './review/review.module';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { UserModule } from './user/user.module';  
 
 @Module({
@@ -33,23 +34,30 @@ import { UserModule } from './user/user.module';
     FavoritRestaurantModule, 
 =======
 import { UserModule } from './user/user.module';  // <-- importe o módulo, não a entidade
+=======
+import { UserModule } from './user/user.module';  
+>>>>>>> 9ad946a (fix swagger)
 
 @Module({
-  imports: [
+  imports:[
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: process.env.DB_HOST || 'localhost',
-      port: parseInt(process.env.DB_PORT, 10) || 5432,
-      username: process.env.DB_USERNAME || 'rdgr777',
-      password: process.env.DB_PASSWORD || '995647',
-      database: process.env.DB_DATABASE || 'ifood_clone',
+      host: 'localhost',
+      port: 5432,
+      username: 'rdgr777',
+      password: '995647',
+      database: 'ifood_clone',
       synchronize: true,
-      autoLoadEntities: true,  // já carrega todas as entidades registradas nos módulos
+      autoLoadEntities: true,
     }),
     AddressModule,
     CategoryModule,
+<<<<<<< HEAD
     FavoritRestaurantModule,  // nome corrigido do módulo
 >>>>>>> e0b2a5f (fix)
+=======
+    FavoritRestaurantModule, 
+>>>>>>> 9ad946a (fix swagger)
     OrderModule,
     OrderItemModule,
     PaymentModule,
@@ -57,10 +65,14 @@ import { UserModule } from './user/user.module';  // <-- importe o módulo, não
     RestaurantModule,
     ReviewModule,
 <<<<<<< HEAD
+<<<<<<< HEAD
     UserModule,              
 =======
     UserModule,                // Adicione aqui
 >>>>>>> e0b2a5f (fix)
+=======
+    UserModule,              
+>>>>>>> 9ad946a (fix swagger)
   ],
   controllers: [AppController],
   providers: [AppService],
