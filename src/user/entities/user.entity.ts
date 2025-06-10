@@ -3,6 +3,7 @@ import { Address } from 'src/address/entities/address.entity';
 import { FavoriteRestaurant } from 'src/favorit-restaurant/entities/favorit-restaurant.entity';
 import { Order } from 'src/order/entities/order.entity';
 import { Review } from 'src/review/entities/review.entity';
+import { UserType } from './user-type.enum'; 
 
 @Entity()
 export class User {
@@ -18,8 +19,12 @@ export class User {
     @Column()
     senha: string;
 
-    @Column()
-    tipo: 'cliente' | 'restaurante' | 'entregador';
+    @Column({
+      type: 'enum',
+      enum: UserType,
+      default: UserType.CLIENTE,
+    })
+    tipo: UserType;
 
     @OneToMany(() => Order, order => order.user)
     orders: Order[];
