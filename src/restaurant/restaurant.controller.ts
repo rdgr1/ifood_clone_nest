@@ -1,8 +1,9 @@
 import { Controller, Get, Post, Body, Param, Put, Delete } from '@nestjs/common';
 import { RestaurantService } from './restaurant.service';
 import { Restaurant } from 'src/restaurant/entities/restaurant.entity';
+import { ApiTags } from '@nestjs/swagger';
 
-
+@ApiTags('restaurant')
 @Controller('restaurant')
 export class RestaurantController {
   constructor(private readonly service: RestaurantService) {}

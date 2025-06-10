@@ -1,7 +1,10 @@
 import { Controller, Get, Post, Body, Param, Put, Delete } from '@nestjs/common';
 import { FavoriteRestaurantService } from 'src/favorit-restaurant/favorit-restaurant.service';
 import { FavoriteRestaurant } from 'src/favorit-restaurant/entities/favorit-restaurant.entity';
+import { ApiTags } from '@nestjs/swagger';
 
+
+@ApiTags('favorite-restaurant')
 @Controller('favorite-restaurant')
 export class FavoriteRestaurantController {
   constructor(private readonly service: FavoriteRestaurantService) {}

@@ -1,7 +1,9 @@
 import { Controller, Get, Post, Body, Param, Put, Delete } from '@nestjs/common';
 import { ReviewService } from './review.service';
 import { Review } from 'src/review/entities/review.entity';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('review')
 @Controller('review')
 export class ReviewController {
   constructor(private readonly service: ReviewService) {}
