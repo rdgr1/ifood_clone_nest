@@ -22,7 +22,7 @@ import { AuthModule } from './auth/auth.module';
       type: 'postgres',
       host: 'localhost',
       port: 5432,
-      username: 'postgres',
+      username: 'rdgr777',
       password: '995647',
       database: 'postgres',
       synchronize: true,
