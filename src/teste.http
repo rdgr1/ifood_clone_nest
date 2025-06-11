@@ -5,10 +5,10 @@ POST http://localhost:3000/auth/register
 Content-Type: application/json
 
 {
-  "name": "Nathan Gonçalves",
+  "nome": "Nathan Gonçalves",
   "email": "nathan@email.com",
-  "password": "senha123",
-  "role": "USER"
+  "senha": "senha123",
+  "tipo": "cliente"
 }
 
 ### Login
@@ -17,7 +17,7 @@ Content-Type: application/json
 
 {
   "email": "nathan@email.com",
-  "password": "senha123"
+  "senha": "senha123"
 }
 
 ### Perfil autenticado (precisa de token Bearer)
@@ -38,10 +38,10 @@ POST http://localhost:3000/user
 Content-Type: application/json
 
 {
-  "name": "Nathan Gonçalves",
+  "nome": "Nathan Gonçalves",
   "email": "nathan@email.com",
-  "password": "senha123",
-  "role": "USER"
+  "senha": "senha123",
+  "tipo": "cliente"
 }
 
 ### Atualizar usuário
@@ -49,7 +49,7 @@ PUT http://localhost:3000/user/1
 Content-Type: application/json
 
 {
-  "name": "Nathan Gonçalves Atualizado",
+  "nome": "Nathan Gonçalves Atualizado",
   "email": "nathan@email.com"
 }
 
@@ -70,11 +70,11 @@ POST http://localhost:3000/restaurant
 Content-Type: application/json
 
 {
-  "name": "Pizzaria do Nathan",
-  "description": "A melhor pizza da cidade",
-  "address": "Rua das Pizzas, 100",
-  "open": true,
-  "image": "https://exemplo.com/img.png"
+   "nome": "Pizzaria do Nathann",
+  "descricao": "A melhor pizza da cidade",
+  "endereco": "Rua das Pizzas, 200",
+  "telefone": "(61) 1525-1289",
+  "tipo": "casual"
 }
 
 ### Atualizar restaurante
@@ -82,11 +82,11 @@ PUT http://localhost:3000/restaurant/1
 Content-Type: application/json
 
 {
-  "name": "Pizzaria do Nathan Atualizada",
-  "description": "Nova descrição",
-  "address": "Rua das Pizzas, 100",
-  "open": false,
-  "image": "https://exemplo.com/img.png"
+  "nome": "Pizzaria do Nathann",
+  "descricao": "Nova descricao",
+  "endereco": "Rua das Pizzas, 200",
+  "telefone": "(61) 1525-1289",
+  "tipo": "casual"
 }
 
 ### Remover restaurante
@@ -106,7 +106,7 @@ POST http://localhost:3000/category
 Content-Type: application/json
 
 {
-  "name": "Pizza"
+  "nome": "Pizza"
 }
 
 ### Atualizar categoria
@@ -114,7 +114,7 @@ PUT http://localhost:3000/category/1
 Content-Type: application/json
 
 {
-  "name": "Pizza Atualizada"
+  "nome": "Pizza Atualizada"
 }
 
 ### Remover categoria
@@ -134,12 +134,11 @@ POST http://localhost:3000/product
 Content-Type: application/json
 
 {
-  "name": "Pizza Portuguesa",
-  "description": "Pizza com presunto, queijo, ovos e ervilha",
-  "price": 39.99,
-  "image": "https://exemplo.com/pizza.png",
-  "categoryId": 1,
-  "restaurantId": 1
+   "id": 1,
+  "nome": "Hambúrguer",
+  "preco": 25.50,
+  "restaurantId": seu id gerado,
+  "categoryId": 3
 }
 
 ### Atualizar produto
@@ -147,12 +146,11 @@ PUT http://localhost:3000/product/1
 Content-Type: application/json
 
 {
-  "name": "Pizza Calabresa",
-  "description": "Pizza com calabresa e cebola",
-  "price": 29.99,
-  "image": "https://exemplo.com/pizza_calabresa.png",
-  "categoryId": 1,
-  "restaurantId": 1
+   "id": 1,
+  "nome": "Pizza Calabresa",
+  "preco": 25.50,
+  "restaurantId": 5,
+  "categoryId": 5
 }
 
 ### Remover produto
@@ -216,9 +214,9 @@ POST http://localhost:3000/order-item
 Content-Type: application/json
 
 {
-  "orderId": 1,
+  "orderId": 2,
   "productId": 1,
-  "quantity": 2
+  "quantidade": 2
 }
 
 ### Atualizar item de pedido
@@ -226,9 +224,9 @@ PUT http://localhost:3000/order-item/1
 Content-Type: application/json
 
 {
-  "orderId": 1,
+  "orderId": 2,
   "productId": 1,
-  "quantity": 3
+  "quantidade": 3
 }
 
 ### Remover item de pedido
@@ -355,7 +353,7 @@ Content-Type: application/json
   "userId": 1,
   "restaurantId": 1,
   "rating": 5,
-  "comment": "Excelente comida e atendimento!"
+  "comentario": "Excelente comida e atendimento!"
 }
 
 ### Atualizar avaliação
@@ -366,7 +364,7 @@ Content-Type: application/json
   "userId": 1,
   "restaurantId": 1,
   "rating": 4,
-  "comment": "Gostei muito, mas demorou um pouco."
+  "comentario": "Gostei muito, mas demorou um pouco."
 }
 
 ### Remover avaliação
