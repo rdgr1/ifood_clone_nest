@@ -1,263 +1,412 @@
-### USER
-POST http://localhost:3000/user
+### Criar UF
+POST http://localhost:3000/uf
 Content-Type: application/json
 
 {
-  "nome": "João da Silva",
-  "email": "joao@email.com",
-  "senha": "123456",
-  "tipo": "cliente"
+  "nome": "São Paulo",
+  "sigla": "SP"
 }
-### USER
-GET http://localhost:3000/user
-### USER
-GET http://localhost:3000/user/1
-### USER
-PUT http://localhost:3000/user/1
+
+### Criar Cidade (uf id: 1)
+POST http://localhost:3000/cidade
 Content-Type: application/json
 
 {
-  "nome": "João da Silva Atualizado"
+  "nome": "Campinas",
+  "uf": {
+    "id": 1
+  }
 }
-### USER
-DELETE http://localhost:3000/user/1
 
-### RESTAURANT
-POST http://localhost:3000/restaurant
+### Criar Estudante (cidade id: 1)
+POST http://localhost:3000/estudante
 Content-Type: application/json
 
 {
-  "nome": "Pizza Place",
-  "endereco": "Rua A, 123",
-  "telefone": "99999-9999",
-  "tipo": "fast_food"
+  "nome": "Maria Oliveira",
+  "matricula": "20240001",
+  "email": "maria.oliveira@example.com",
+  "dt_nascimento": "2002-05-12",
+  "cidade": {
+    "id": 1
+  }
 }
-### RESTAURANT
 
-GET http://localhost:3000/restaurant
-### RESTAURANT
+### Listar UFs
+GET http://localhost:3000/uf
 
-GET http://localhost:3000/restaurant/1
-### RESTAURANT
+### Listar Cidades
+GET http://localhost:3000/cidade
 
-PUT http://localhost:3000/restaurant/1
+### Listar Estudantes
+GET http://localhost:3000/estudante
+
+### Ver um estudante
+GET http://localhost:3000/estudante/2
+
+### Atualizar UF
+PATCH http://localhost:3000/uf/1
 Content-Type: application/json
 
 {
-  "nome": "Pizza Place Atualizado"
+  "nome": "São Paulo Atualizado"
 }
-### RESTAURANT
 
-DELETE http://localhost:3000/restaurant/1
+### Deletar Estudante
+DELETE http://localhost:3000/estudante/1
+# --- NOVOS ENDPOINTS ---
+### GET /
+GET http://localhost:3000/
 
-### PRODUCT
-POST http://localhost:3000/product
-Content-Type: application/json
 
-{
-  "nome": "Pizza Calabresa",
-  "preco": 39.90,
-  "restaurantId": 1,
-  "categoryId": 1
-}
-### PRODUCT
+### GET /order
+GET http://localhost:3000/order
 
-GET http://localhost:3000/product
-### PRODUCT
 
-GET http://localhost:3000/product/1
-### PRODUCT
+### GET /order/:id
+GET http://localhost:3000/order/1
 
-PUT http://localhost:3000/product/1
-Content-Type: application/json
 
-{
-  "preco": 42.50
-}
-### PRODUCT
-
-DELETE http://localhost:3000/product/1
-
-### CATEGORY
-POST http://localhost:3000/category
-Content-Type: application/json
-
-{
-  "nome": "Pizzas"
-}
-### CATEGORY
-
-GET http://localhost:3000/category
-### CATEGORY
-
-GET http://localhost:3000/category/1
-### CATEGORY
-
-PUT http://localhost:3000/category/1
-Content-Type: application/json
-
-{
-  "nome": "Massas"
-}
-### CATEGORY
-
-DELETE http://localhost:3000/category/1
-
-### ORDER
+### POST /order
 POST http://localhost:3000/order
 Content-Type: application/json
 
 {
-  "userId": 1,
-  "restaurantId": 1,
-  "status": "pendente"
+  
 }
-### ORDER
 
-GET http://localhost:3000/order
-### ORDER
 
-GET http://localhost:3000/order/1
-### ORDER
-
+### PUT /order/:id
 PUT http://localhost:3000/order/1
 Content-Type: application/json
 
 {
-  "status": "confirmado"
+  
 }
-### ORDER
 
+
+### DELETE /order/:id
 DELETE http://localhost:3000/order/1
 
-### ORDER-ITEM
-POST http://localhost:3000/order-item
+
+### GET /restaurant
+GET http://localhost:3000/restaurant
+
+
+### GET /restaurant/:id
+GET http://localhost:3000/restaurant/1
+
+
+### POST /restaurant
+POST http://localhost:3000/restaurant
 Content-Type: application/json
 
 {
-  "orderId": 1,
-  "productId": 1,
-  "quantidade": 2
+  
 }
-### ORDER-ITEM
 
-GET http://localhost:3000/order-item
-### ORDER-ITEM
 
-GET http://localhost:3000/order-item/1
-### ORDER-ITEM
-
-PUT http://localhost:3000/order-item/1
+### PUT /restaurant/:id
+PUT http://localhost:3000/restaurant/1
 Content-Type: application/json
 
 {
-  "quantidade": 3
+  
 }
-### ORDER-ITEM
 
-DELETE http://localhost:3000/order-item/1
 
-### ADDRESS
-POST http://localhost:3000/address
+### DELETE /restaurant/:id
+DELETE http://localhost:3000/restaurant/1
+
+
+### GET /category
+GET http://localhost:3000/category
+
+
+### GET /category/:id
+GET http://localhost:3000/category/1
+
+
+### POST /category
+POST http://localhost:3000/category
 Content-Type: application/json
 
 {
-  "userId": 1,
-  "street": "Rua das Flores",
-  "number": "100",
-  "neighborhood": "Centro",
-  "city": "Brasília",
-  "state": "DF",
-  "zipCode": "70000-000",
-  "isDefault": true
+  
 }
-### ADDRESS
 
-GET http://localhost:3000/address
-### ADDRESS
 
-GET http://localhost:3000/address/1
-### ADDRESS
-
-PUT http://localhost:3000/address/1
+### PUT /category/:id
+PUT http://localhost:3000/category/1
 Content-Type: application/json
 
 {
-  "city": "Taguatinga"
+  
 }
-### ADDRESS
 
-DELETE http://localhost:3000/address/1
 
-### PAYMENT
+### DELETE /category/:id
+DELETE http://localhost:3000/category/1
+
+
+### GET /auth/profile
+GET http://localhost:3000/auth/profile
+
+
+### POST /auth/register
+POST http://localhost:3000/auth/register
+Content-Type: application/json
+
+{
+  
+}
+
+
+### POST /auth/login
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+  
+}
+
+
+### GET /payment
+GET http://localhost:3000/payment
+
+
+### GET /payment/:id
+GET http://localhost:3000/payment/1
+
+
+### POST /payment
 POST http://localhost:3000/payment
 Content-Type: application/json
 
 {
-  "amount": 79.80,
-  "method": "cartao_credito",
-  "status": "aprovado",
-  "orderId": 1
+  
 }
-### PAYMENT
 
-GET http://localhost:3000/payment
-### PAYMENT
 
-GET http://localhost:3000/payment/1
-### PAYMENT
-
+### PUT /payment/:id
 PUT http://localhost:3000/payment/1
 Content-Type: application/json
 
 {
-  "status": "estornado"
+  
 }
-### PAYMENT
 
+
+### DELETE /payment/:id
 DELETE http://localhost:3000/payment/1
 
-### FAVORITE RESTAURANT
+
+### GET /user
+GET http://localhost:3000/user
+
+
+### GET /user/:id
+GET http://localhost:3000/user/1
+
+
+### POST /user
+POST http://localhost:3000/user
+Content-Type: application/json
+
+{
+  
+}
+
+
+### PUT /user/:id
+PUT http://localhost:3000/user/1
+Content-Type: application/json
+
+{
+  
+}
+
+
+### DELETE /user/:id
+DELETE http://localhost:3000/user/1
+
+
+### GET /favorite-restaurant
+GET http://localhost:3000/favorite-restaurant
+
+
+### GET /favorite-restaurant/:id
+GET http://localhost:3000/favorite-restaurant/1
+
+
+### POST /favorite-restaurant
 POST http://localhost:3000/favorite-restaurant
 Content-Type: application/json
 
 {
-  "userId": 1,
-  "restaurantId": 1
+  
 }
-### FAVORITE RESTAURANT
 
-GET http://localhost:3000/favorite-restaurant
-### FAVORITE RESTAURANT
 
-GET http://localhost:3000/favorite-restaurant/1
-### FAVORITE RESTAURANT
+### PUT /favorite-restaurant/:id
+PUT http://localhost:3000/favorite-restaurant/1
+Content-Type: application/json
 
+{
+  
+}
+
+
+### DELETE /favorite-restaurant/:id
 DELETE http://localhost:3000/favorite-restaurant/1
 
-### REVIEW
+
+### GET /product
+GET http://localhost:3000/product
+
+
+### GET /product/:id
+GET http://localhost:3000/product/1
+
+
+### POST /product
+POST http://localhost:3000/product
+Content-Type: application/json
+
+{
+  
+}
+
+
+### PUT /product/:id
+PUT http://localhost:3000/product/1
+Content-Type: application/json
+
+{
+  
+}
+
+
+### DELETE /product/:id
+DELETE http://localhost:3000/product/1
+
+
+### GET /review
+GET http://localhost:3000/review
+
+
+### GET /review/:id
+GET http://localhost:3000/review/1
+
+
+### POST /review
 POST http://localhost:3000/review
 Content-Type: application/json
 
 {
-  "userId": 1,
-  "restaurantId": 1,
-  "rating": 5,
-  "comentario": "Ótima comida!"
+  
 }
-### REVIEW
-GET http://localhost:3000/review
-### REVIEW
-GET http://localhost:3000/review/1
-### REVIEW
 
+
+### PUT /review/:id
 PUT http://localhost:3000/review/1
 Content-Type: application/json
 
 {
-  "rating": 4,
-  "comentario": "Muito bom, mas pode melhorar o atendimento."
+  
 }
-### REVIEW
 
+
+### DELETE /review/:id
 DELETE http://localhost:3000/review/1
+
+
+### GET /address
+GET http://localhost:3000/address
+
+
+### GET /address/:id
+GET http://localhost:3000/address/1
+
+
+### POST /address
+POST http://localhost:3000/address
+Content-Type: application/json
+
+{
+  
+}
+
+
+### PUT /address/:id
+PUT http://localhost:3000/address/1
+Content-Type: application/json
+
+{
+  
+}
+
+
+### DELETE /address/:id
+DELETE http://localhost:3000/address/1
+
+
+### GET /order-item
+GET http://localhost:3000/order-item
+
+
+### GET /order-item/:id
+GET http://localhost:3000/order-item/1
+
+
+### POST /order-item
+POST http://localhost:3000/order-item
+Content-Type: application/json
+
+{
+  
+}
+
+
+### PUT /order-item/:id
+PUT http://localhost:3000/order-item/1
+Content-Type: application/json
+
+{
+  
+}
+
+
+### DELETE /order-item/:id
+DELETE http://localhost:3000/order-item/1
+
+
+### GET /teste
+GET http://localhost:3000/teste
+
+
+### GET /teste/:id
+GET http://localhost:3000/teste/1
+
+
+### POST /teste
+POST http://localhost:3000/teste
+Content-Type: application/json
+
+{
+  
+}
+
+
+### PATCH /teste/:id
+PATCH http://localhost:3000/teste/1
+Content-Type: application/json
+
+{
+  
+}
+
+
+### DELETE /teste/:id
+DELETE http://localhost:3000/teste/1
+
