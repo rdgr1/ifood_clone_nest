@@ -1,4 +1,3 @@
-import { IsString, IsInt, IsOptional, IsNotEmpty, IsNumber } from 'class-validator';
 import { ApiProperty } from "@nestjs/swagger";
 
 export class CreateFavoritRestaurantDto {
@@ -7,21 +6,18 @@ export class CreateFavoritRestaurantDto {
   description: 'Identificador único do favorito',
   example: 1,
  })
-  @IsNumber()
   id: number;
 
   @ApiProperty({
     description: 'Identificador do usuário que favoritou o restaurante',
     example: 10,
   })
-  @IsNumber()
   userId: number;
 
   @ApiProperty({
     description: 'Identificador do restaurante favoritado',
     example: 5,
   })
-  @IsNumber()
   restaurantId: number;
 
   @ApiProperty({

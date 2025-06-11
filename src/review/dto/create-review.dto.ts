@@ -1,4 +1,3 @@
-import { IsString, IsInt, IsOptional, IsNotEmpty, IsNumber } from 'class-validator';
 import { ApiProperty } from "@nestjs/swagger";
 
 export class CreateReviewDto {
@@ -6,28 +5,24 @@ export class CreateReviewDto {
     description: 'Identificador único da avaliação',
     example: 1,
   })
-  @IsNumber()
   id: number;
 
   @ApiProperty({
     description: 'Identificador do usuário que fez a avaliação',
     example: 10,
   })
-  @IsNumber()
   userId: number;
 
   @ApiProperty({
     description: 'Identificador do restaurante avaliado',
     example: 5,
   })
-  @IsNumber()
   restaurantId: number;
 
   @ApiProperty({
     description: 'Nota de avaliação dada pelo usuário',
     example: 4,
   })
-  @IsNumber()
   rating: number;
 
   @ApiProperty({
@@ -35,8 +30,6 @@ export class CreateReviewDto {
     example: 'Ótimo atendimento!',
     required: false,
   })
-  @IsOptional()
-  @IsString()
   comentario?: string;
 
   @ApiProperty({
