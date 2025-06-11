@@ -14,6 +14,7 @@ import { ProductModule } from './product/product.module';
 import { RestaurantModule } from './restaurant/restaurant.module';
 import { ReviewModule } from './review/review.module';
 import { UserModule } from './user/user.module';  
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports:[
@@ -21,11 +22,12 @@ import { UserModule } from './user/user.module';
       type: 'postgres',
       host: 'localhost',
       port: 5432,
-      username: 'rdgr777',
+      username: 'postgres',
       password: '995647',
-      database: 'ifood_clone',
+      database: 'postgres',
       synchronize: true,
       autoLoadEntities: true,
+      logging: true,
     }),
     AddressModule,
     CategoryModule,
@@ -36,7 +38,8 @@ import { UserModule } from './user/user.module';
     ProductModule,
     RestaurantModule,
     ReviewModule,
-    UserModule,              
+    UserModule,
+    AuthModule,              
   ],
   controllers: [AppController],
   providers: [AppService],
