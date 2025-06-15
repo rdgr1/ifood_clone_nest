@@ -24,7 +24,7 @@ import { AuthModule } from './auth/auth.module';
       port: 5432,
       username: 'rdgr777',
       password: '995647',
-      database: 'educavagas_db',
+      database: 'ifood_clone',
       synchronize: true,
       autoLoadEntities: true,
     }),
