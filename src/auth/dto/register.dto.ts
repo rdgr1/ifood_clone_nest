@@ -1,18 +1,16 @@
-import { IsEmail, IsEnum, IsNotEmpty, IsString } from 'class-validator';
+import { IsEmail, IsEnum, IsString } from 'class-validator';
+import { UserType } from 'src/user/entities/user-type.enum';
 
 export class RegisterDto {
-  @IsEmail()
-  email: string;
-
-  @IsNotEmpty()
-  @IsString()
-  senha: string;
-
-  @IsNotEmpty()
   @IsString()
   nome: string;
 
-  @IsNotEmpty()
-  @IsEnum(['cliente', 'restaurante', 'entregador'])
-  tipo: 'cliente' | 'restaurante' | 'entregador';
+  @IsEmail()
+  email: string;
+
+  @IsString()
+  senha: string;
+
+  @IsEnum(UserType)
+  tipo: UserType;
 }
