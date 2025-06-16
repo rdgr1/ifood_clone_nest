@@ -26,6 +26,7 @@ import { AuthModule } from './auth/auth.module';
       password: '995647',
       database: 'ifood_clone',
       synchronize: true,
+      dropSchema: true,
       autoLoadEntities: true,
     }),
     AddressModule,

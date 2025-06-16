@@ -1,7 +1,5 @@
-// src/user/user-type.enum.ts
-
 export enum UserType {
   CLIENTE = 'cliente',
-  RESTAURANTE = 'restaurante',
+  LOJA = 'loja',
   ENTREGADOR = 'entregador',
 }

@@ -1,19 +1,25 @@
-import { Controller, Post, Body, UseGuards, Request, Get } from '@nestjs/common';
+import {
+  Controller,
+  Post,
+  Body,
+  UseGuards,
+  Request,
+  Get,
+} from '@nestjs/common';
 import { ApiTags, ApiBearerAuth, ApiBody, ApiOperation } from '@nestjs/swagger';
 import { AuthService } from './auth.service';
 import { LoginDto } from './dto/login.dto';
 import { RegisterDto } from './dto/register.dto';
-import { JwtAuthGuard } from './jwt-auth.guard'; 
-
+import { JwtAuthGuard } from './jwt-auth.guard';
 
 @ApiTags('auth')
 @Controller('auth')
 export class AuthController {
   constructor(private readonly authService: AuthService) {}
 
+  @Post('register')
   @ApiOperation({ summary: 'Registrar novo usuário' })
   @ApiBody({ type: RegisterDto })
-  @Post('register')
   async register(@Body() registerDto: RegisterDto) {
     return this.authService.register(registerDto);
   }
@@ -25,8 +31,7 @@ export class AuthController {
     return this.authService.login(loginDto);
   }
 
-  
-  @ApiBearerAuth('jwt') 
+  @ApiBearerAuth('jwt')
   @UseGuards(JwtAuthGuard)
   @ApiOperation({ summary: 'Perfil do usuário (rota protegida)' })
   @Get('profile')

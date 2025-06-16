@@ -1,5 +1,5 @@
 // login.dto.ts
-import { IsEmail, IsNotEmpty, IsString } from 'class-validator';
+import { IsEmail, IsNotEmpty, IsString, IsEnum } from 'class-validator';
 
 export class LoginDto {
   @IsEmail()
@@ -8,4 +8,8 @@ export class LoginDto {
   @IsNotEmpty()
   @IsString()
   senha: string;
+
+  @IsNotEmpty()
+  @IsEnum(['cliente', 'restaurante', 'entregador'])
+  tipo: 'cliente' | 'restaurante' | 'entregador';
 }
