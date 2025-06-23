@@ -1,5 +1,5 @@
 
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, OneToOne } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, OneToOne, OneToMany } from 'typeorm';
 import { Order } from 'src/order/entities/order.entity';
 
 @Entity()
@@ -19,8 +19,8 @@ export class Payment {
     @Column({ nullable: true })
     transactionId: string;
 
-    @OneToOne(() => Order, order => order.payment)
-    order: Order;
+    @OneToMany(() => Order, order => order.payment)
+    orders: Order[];
 
     @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
     createdAt: Date;

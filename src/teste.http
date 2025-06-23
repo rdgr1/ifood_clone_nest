@@ -70,9 +70,9 @@ POST http://localhost:3000/restaurant
 Content-Type: application/json
 
 {
-   "nome": "Pizzaria do Nathann",
-  "descricao": "A melhor pizza da cidade",
-  "endereco": "Rua das Pizzas, 200",
+   "nome": "Arabe do Fael",
+  "descricao": "A melhor falafel do fael",
+  "endereco": "Rua das Arabes Alahag, 200",
   "telefone": "(61) 1525-1289",
   "tipo": "casual"
 }
@@ -90,7 +90,7 @@ Content-Type: application/json
 }
 
 ### Remover restaurante
-DELETE http://localhost:3000/restaurant/1
+DELETE http://localhost:3000/restaurant/5
 
 
 ### CATEGORY
@@ -134,12 +134,15 @@ POST http://localhost:3000/product
 Content-Type: application/json
 
 {
-   "id": 1,
-  "nome": "Hambúrguer",
-  "preco": 25.50,
-  "restaurantId": seu id gerado,
+   "id": 2,
+  "nome": "Caldo de Cana 1L",
+  "preco": 10.00,
+  "restaurantId": 2,
   "categoryId": 3
 }
+### Buscar produtos do restaurante
+GET http://localhost:3000/product?restaurantId=2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5hdGhhbkBlbWFpbC5jb20iLCJzdWIiOjcsImlhdCI6MTc1MDQ0NTgyNiwiZXhwIjoxNzUwNDQ5NDI2fQ.ZW4PdAs-mYGVZthd6Q6wteqVKYkXsu1VUDG_X0RrGRI
 
 ### Atualizar produto
 PUT http://localhost:3000/product/1

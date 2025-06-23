@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Param, Put, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Param, Put, Delete, Query } from '@nestjs/common';
 import { RestaurantService } from './restaurant.service';
 import { Restaurant } from 'src/restaurant/entities/restaurant.entity';
 import { ApiTags } from '@nestjs/swagger';
@@ -27,7 +27,7 @@ export class RestaurantController {
   update(@Param('id') id: number, @Body() data: Partial<Restaurant>) {
     return this.service.update(id, data);
   }
-
+  
   @Delete(':id')
   remove(@Param('id') id: number) {
     return this.service.remove(id);

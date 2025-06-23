@@ -60,20 +60,24 @@ export class AuthService {
   }
 
   async login(
-    loginDto: LoginDto,
-  ): Promise<{ access_token: string; tipo: string }> {
-    const { email, senha } = loginDto;
+  loginDto: LoginDto,
+): Promise<{ access_token: string; tipo: string; user: { id: number; nome: string } }> {
+  const { email, senha } = loginDto;
 
-    const user = await this.validateUser(email, senha);
-    if (!user) {
-      throw new UnauthorizedException('Credenciais inválidas');
-    }
-
-    const payload = { email: user.email, sub: user.id };
-
-    return {
-      access_token: this.jwtService.sign(payload),
-      tipo: user.tipo,
-    };
+  const user = await this.validateUser(email, senha);
+  if (!user) {
+    throw new UnauthorizedException('Credenciais inválidas');
   }
+
+  const payload = { email: user.email, sub: user.id };
+
+  return {
+    access_token: this.jwtService.sign(payload),
+    tipo: user.tipo,
+    user: {
+      id: user.id,
+      nome: user.nome,
+    },
+  };
+}
 }

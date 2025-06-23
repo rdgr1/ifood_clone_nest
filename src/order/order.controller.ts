@@ -1,4 +1,12 @@
-import { Controller, Get, Post, Body, Param, Put, Delete } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Param,
+  Put,
+  Delete,
+} from '@nestjs/common';
 import { OrderService } from './order.service';
 import { Order } from 'src/order/entities/order.entity';
 import { ApiTags } from '@nestjs/swagger';
@@ -31,5 +39,10 @@ export class OrderController {
   @Delete(':id')
   remove(@Param('id') id: number) {
     return this.service.remove(id);
+  }
+
+  @Get('cliente/:id')
+  findByCliente(@Param('id') id: number) {
+    return this.service.findByCliente(id);
   }
 }

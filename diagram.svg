@@ -1,0 +1,2181 @@
+<svg version="1.1" baseProfile="full" width="20398.0" height="290.0" viewBox="0 0 20398 290" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events">
+<desc >#.interface: fill=lightblue
+#.enumeration: fill=lightgreen
+#.type: fill=lightgray
+
+[AppController|-appService: AppService|+getHello(): string]
+[AppModule||]
+[AppService||+getHello(): string]
+[AddressController|-service: AddressService|+create(): Promise&lt;any&gt;;+findAll(): Promise&lt;Address\[\]&gt;;+findOne(): Promise&lt;Address&gt;;+update(): Promise&lt;UpdateResult&gt;;+remove(): Promise&lt;DeleteResult&gt;]
+[AddressModule||]
+[AddressService|-repo: Repository&lt;Address&gt;|+create(): Promise&lt;any&gt;;+findAll(): Promise&lt;Address\[\]&gt;;+findOne(): Promise&lt;Address&gt;;+update(): Promise&lt;UpdateResult&gt;;+remove(): Promise&lt;DeleteResult&gt;]
+[AuthController|-authService: AuthService|+register(): Promise&lt;{ access_token: string; tipo: string; }&gt;;+login(): Promise&lt;{ access_token: string; tipo: string; }&gt;;+getProfile(): any]
+[AuthModule||]
+[AuthService|-usersRepository: Repository&lt;User&gt;;-jwtService: JwtService|+generateToken(): string;+register(): Promise&lt;{ access_token: string; tipo: string; }&gt;;+validateUser(): Promise&lt;User&gt;;+login(): Promise&lt;{ access_token: string; tipo: string; }&gt;]
+[JwtAuthGuard||]
+[JwtStrategy||+validate(): Promise&lt;{ id: any; email: any; }&gt;]
+[CategoryController|-service: CategoryService|+create(): Promise&lt;any&gt;;+findAll(): Promise&lt;Category\[\]&gt;;+findOne(): Promise&lt;Category&gt;;+update(): Promise&lt;UpdateResult&gt;;+remove(): Promise&lt;DeleteResult&gt;]
+[CategoryModule||]
+[CategoryService|-repo: Repository&lt;Category&gt;|+create(): Promise&lt;any&gt;;+findAll(): Promise&lt;Category\[\]&gt;;+findOne(): Promise&lt;Category&gt;;+update(): Promise&lt;UpdateResult&gt;;+remove(): Promise&lt;DeleteResult&gt;]
+[FavoriteRestaurantController|-service: FavoriteRestaurantService|+create(): any;+findAll(): any;+findOne(): any;+update(): any;+remove(): any]
+[FavoritRestaurantModule||]
+[FavoriteRestaurantService|-repo: Repository&lt;FavoriteRestaurant&gt;|+create(): Promise&lt;any&gt;;+findAll(): Promise&lt;FavoriteRestaurant\[\]&gt;;+findOne(): Promise&lt;FavoriteRestaurant&gt;;+update(): Promise&lt;UpdateResult&gt;;+remove(): Promise&lt;DeleteResult&gt;]
+[OrderController|-service: OrderService|+create(): Promise&lt;any&gt;;+findAll(): Promise&lt;Order\[\]&gt;;+findOne(): Promise&lt;Order&gt;;+update(): Promise&lt;UpdateResult&gt;;+remove(): Promise&lt;DeleteResult&gt;]
+[OrderModule||]
+[OrderService|-repo: Repository&lt;Order&gt;|+create(): Promise&lt;any&gt;;+findAll(): Promise&lt;Order\[\]&gt;;+findOne(): Promise&lt;Order&gt;;+update(): Promise&lt;UpdateResult&gt;;+remove(): Promise&lt;DeleteResult&gt;]
+[OrderItemController|-service: OrderItemService|+create(): Promise&lt;any&gt;;+findAll(): Promise&lt;OrderItem\[\]&gt;;+findOne(): Promise&lt;OrderItem&gt;;+update(): Promise&lt;UpdateResult&gt;;+remove(): Promise&lt;DeleteResult&gt;]
+[OrderItemModule||]
+[OrderItemService|-repo: Repository&lt;OrderItem&gt;|+create(): Promise&lt;any&gt;;+findAll(): Promise&lt;OrderItem\[\]&gt;;+findOne(): Promise&lt;OrderItem&gt;;+update(): Promise&lt;UpdateResult&gt;;+remove(): Promise&lt;DeleteResult&gt;]
+[PaymentController|-service: PaymentService|+create(): Promise&lt;any&gt;;+findAll(): Promise&lt;Payment\[\]&gt;;+findOne(): Promise&lt;Payment&gt;;+update(): Promise&lt;UpdateResult&gt;;+remove(): Promise&lt;DeleteResult&gt;]
+[PaymentModule||]
+[PaymentService|-repo: Repository&lt;Payment&gt;|+create(): Promise&lt;any&gt;;+findAll(): Promise&lt;Payment\[\]&gt;;+findOne(): Promise&lt;Payment&gt;;+update(): Promise&lt;UpdateResult&gt;;+remove(): Promise&lt;DeleteResult&gt;]
+[ProductController|-service: ProductService|+create(): Promise&lt;any&gt;;+findAll(): Promise&lt;Product\[\]&gt;;+findOne(): Promise&lt;Product&gt;;+update(): Promise&lt;UpdateResult&gt;;+remove(): Promise&lt;DeleteResult&gt;]
+[ProductModule||]
+[ProductService|-repo: Repository&lt;Product&gt;|+create(): Promise&lt;any&gt;;+findAll(): Promise&lt;Product\[\]&gt;;+findOne(): Promise&lt;Product&gt;;+update(): Promise&lt;UpdateResult&gt;;+remove(): Promise&lt;DeleteResult&gt;]
+[RestaurantController|-service: RestaurantService|+create(): Promise&lt;any&gt;;+findAll(): Promise&lt;Restaurant\[\]&gt;;+findOne(): Promise&lt;Restaurant&gt;;+update(): Promise&lt;UpdateResult&gt;;+remove(): Promise&lt;DeleteResult&gt;]
+[RestaurantModule||]
+[RestaurantService|-repo: Repository&lt;Restaurant&gt;|+create(): Promise&lt;any&gt;;+findAll(): Promise&lt;Restaurant\[\]&gt;;+findOne(): Promise&lt;Restaurant&gt;;+update(): Promise&lt;UpdateResult&gt;;+remove(): Promise&lt;DeleteResult&gt;]
+[ReviewController|-service: ReviewService|+create(): Promise&lt;any&gt;;+findAll(): Promise&lt;Review\[\]&gt;;+findOne(): Promise&lt;Review&gt;;+update(): Promise&lt;UpdateResult&gt;;+remove(): Promise&lt;DeleteResult&gt;]
+[ReviewModule||]
+[ReviewService|-repo: Repository&lt;Review&gt;|+create(): Promise&lt;any&gt;;+findAll(): Promise&lt;Review\[\]&gt;;+findOne(): Promise&lt;Review&gt;;+update(): Promise&lt;UpdateResult&gt;;+remove(): Promise&lt;DeleteResult&gt;]
+[TesteController|-testeService: TesteService|+create(): string;+findAll(): string;+findOne(): string;+update(): string;+remove(): string]
+[TesteModule||]
+[TesteService||+create(): string;+findAll(): string;+findOne(): string;+update(): string;+remove(): string]
+[UserController|-service: UserService|+create(): Promise&lt;any&gt;;+findAll(): Promise&lt;User\[\]&gt;;+findOne(): Promise&lt;User&gt;;+update(): Promise&lt;UpdateResult&gt;;+remove(): Promise&lt;DeleteResult&gt;]
+[UserModule||]
+[UserService|-repo: Repository&lt;User&gt;|+create(): Promise&lt;any&gt;;+findAll(): Promise&lt;User\[\]&gt;;+findOne(): Promise&lt;User&gt;;+update(): Promise&lt;UpdateResult&gt;;+remove(): Promise&lt;DeleteResult&gt;]
+[CreateAddressDto|+id: number;+userId: number;+street: string;+number: string;+neighborhood: string;+city: string;+state: string;+zipCode: string;+complement?: string;+isDefault: boolean;+createdAt: Date|]
+[UpdateAddressDto|+street?: string;+number?: string;+neighborhood?: string;+city?: string;+state?: string;+zipCode?: string;+complement?: string;+isDefault?: boolean|]
+[Address|+id: number;+user: User;+street: string;+number: string;+neighborhood: string;+city: string;+state: string;+zipCode: string;+complement: string;+isDefault: boolean;+createdAt: Date|]
+[LoginDto|+email: string;+senha: string;+tipo: &quot;cliente&quot; \| &quot;restaurante&quot; \| &quot;entregador&quot;|]
+[RegisterDto|+nome: string;+email: string;+senha: string;+tipo: UserType|]
+[CreateCategoryDto|+id: number;+nome: string|]
+[UpdateCategoryDto|+nome?: string|]
+[Category|+id: number;+nome: string;+products: Product\[\]|]
+[CreateFavoritRestaurantDto|+id: number;+userId: number;+restaurantId: number;+createdAt: Date|]
+[UpdateFavoritRestaurantDto|+userId?: number;+restaurantId?: number|]
+[FavoriteRestaurant|+id: number;+user: User;+restaurant: Restaurant;+createdAt: Date|]
+[CreateOrderDto|+id: number;+userId: number;+restaurantId: number;+status: string;+data_pedido: Date|]
+[UpdateOrderDto|+userId?: number;+restaurantId?: number;+status?: string|]
+[Order|+id: number;+user: User;+restaurant: Restaurant;+status: string;+data_pedido: Date;+orderItems: OrderItem\[\];+payment: Payment|]
+[CreateOrderItemDto|+id: number;+orderId: number;+productId: number;+quantidade: number|]
+[UpdateOrderItemDto|+orderId?: number;+productId?: number;+quantidade?: number|]
+[OrderItem|+id: number;+order: Order;+product: Product;+quantidade: number|]
+[CreatePaymentDto|+id: number;+amount: number;+method: string;+status: string;+transactionId?: string;+orderId: number;+createdAt: Date|]
+[UpdatePaymentDto|+amount?: number;+method?: string;+status?: string;+transactionId?: string;+orderId?: number|]
+[Payment|+id: number;+amount: number;+method: string;+status: string;+transactionId: string;+order: Order;+createdAt: Date|]
+[CreateProductDto|+id: number;+nome: string;+preco: number;+restaurantId: number;+categoryId: number|]
+[UpdateProductDto|+nome?: string;+preco?: number;+restaurantId?: number;+categoryId?: number|]
+[Product|+id: number;+nome: string;+preco: number;+restaurant: Restaurant;+category: Category;+orderItems: OrderItem\[\]|]
+[CreateRestaurantDto|+id: number;+nome: string;+endereco: string;+telefone: string;+tipo: &quot;fast_food&quot; \| &quot;casual&quot; \| &quot;fine_dining&quot;|]
+[UpdateRestaurantDto|+nome?: string;+endereco?: string;+telefone?: string;+tipo?: &quot;fast_food&quot; \| &quot;casual&quot; \| &quot;fine_dining&quot;|]
+[Restaurant|+id: number;+nome: string;+endereco: string;+telefone: string;+tipo: &quot;fast_food&quot; \| &quot;casual&quot; \| &quot;fine_dining&quot;;+products: Product\[\];+orders: Order\[\];+favorites: FavoriteRestaurant\[\];+reviews: Review\[\]|]
+[CreateReviewDto|+id: number;+userId: number;+restaurantId: number;+rating: number;+comentario?: string;+createdAt: Date|]
+[UpdateReviewDto|+userId?: number;+restaurantId?: number;+rating?: number;+comentario?: string|]
+[Review|+id: number;+user: User;+restaurant: Restaurant;+rating: number;+comentario: string;+createdAt: Date|]
+[CreateTesteDto||]
+[UpdateTesteDto||]
+[Teste||]
+[CreateUserDto|+id: number;+nome: string;+email: string;+tipo: &quot;cliente&quot; \| &quot;restaurante&quot; \| &quot;entregador&quot;|]
+[UpdateUserDto|+nome?: string;+email?: string;+senha?: string;+tipo?: &quot;cliente&quot; \| &quot;restaurante&quot; \| &quot;entregador&quot;|]
+[&lt;enumeration&gt;UserType|CLIENTE;LOJA;ENTREGADOR]
+[User|+id: number;+nome: string;+email: string;+senha: string;+tipo: UserType;+orders: Order\[\];+addresses: Address\[\];+favorites: FavoriteRestaurant\[\];+reviews: Review\[\]|]</desc>
+<g stroke-width="1.0" text-align="left" font="12pt Helvetica, Arial, sans-serif" font-size="12pt" font-family="Helvetica" font-weight="normal" font-style="normal">
+<g font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round" stroke="#33322E">
+<g stroke="transparent" fill="transparent">
+<rect x="0.0" y="0.0" height="290.0" width="20398.0" stroke="none"></rect>
+</g>
+<g transform="translate(8, 8)" fill="#33322E">
+<g transform="translate(20, 20)">
+<g data-name="AppController">
+<g fill="#eee8d5" stroke="#33322E" data-name="AppController">
+<rect x="0.0" y="69.0" height="96.0" width="211.0" data-name="AppController"></rect>
+<path d="M0.0 101.0 L211.0 101.0" fill="none" data-name="AppController"></path>
+<path d="M0.0 133.0 L211.0 133.0" fill="none" data-name="AppController"></path>
+</g>
+<g transform="translate(0, 69)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="AppController" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="AppController" data-compartment="0">
+<a id="src/app.controller.ts.AppController" xlink:href="src/app.controller.ts"><text x="97.5" y="14.1" stroke="none" text-anchor="middle" data-name="AppController" data-compartment="0">AppController</text></a>
+
+</g>
+</g>
+<g transform="translate(0, 101)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="AppController" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="AppController" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="AppController" data-compartment="1">-appService: AppService</text>
+
+</g>
+</g>
+<g transform="translate(0, 133)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="AppController" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="AppController" data-compartment="2">
+<text x="0.0" y="14.1" stroke="none" data-name="AppController" data-compartment="2">+getHello(): string</text>
+
+</g>
+</g>
+</g>
+<g data-name="AppModule">
+<g fill="#eee8d5" stroke="#33322E" data-name="AppModule">
+<rect x="251.0" y="93.0" height="48.0" width="105.0" data-name="AppModule"></rect>
+<path d="M251.0 125.0 L356.0 125.0" fill="none" data-name="AppModule"></path>
+<path d="M251.0 133.0 L356.0 133.0" fill="none" data-name="AppModule"></path>
+</g>
+<g transform="translate(251, 93)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="AppModule" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="AppModule" data-compartment="0">
+<a id="src/app.module.ts.AppModule" xlink:href="src/app.module.ts"><text x="44.5" y="14.1" stroke="none" text-anchor="middle" data-name="AppModule" data-compartment="0">AppModule</text></a>
+
+</g>
+</g>
+<g transform="translate(251, 125)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="AppModule" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" data-name="AppModule" data-compartment="1">
+
+</g>
+</g>
+<g transform="translate(251, 133)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="AppModule" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="AppModule" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="AppService">
+<g fill="#eee8d5" stroke="#33322E" data-name="AppService">
+<rect x="396.0" y="81.0" height="72.0" width="157.0" data-name="AppService"></rect>
+<path d="M396.0 113.0 L553.0 113.0" fill="none" data-name="AppService"></path>
+<path d="M396.0 121.0 L553.0 121.0" fill="none" data-name="AppService"></path>
+</g>
+<g transform="translate(396, 81)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="AppService" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="AppService" data-compartment="0">
+<a id="src/app.service.ts.AppService" xlink:href="src/app.service.ts"><text x="70.5" y="14.1" stroke="none" text-anchor="middle" data-name="AppService" data-compartment="0">AppService</text></a>
+
+</g>
+</g>
+<g transform="translate(396, 113)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="AppService" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" data-name="AppService" data-compartment="1">
+
+</g>
+</g>
+<g transform="translate(396, 121)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="AppService" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="AppService" data-compartment="2">
+<text x="0.0" y="14.1" stroke="none" data-name="AppService" data-compartment="2">+getHello(): string</text>
+
+</g>
+</g>
+</g>
+<g data-name="AddressController">
+<g fill="#eee8d5" stroke="#33322E" data-name="AddressController">
+<rect x="593.0" y="36.5" height="161.0" width="294.0" data-name="AddressController"></rect>
+<path d="M593.0 68.5 L887.0 68.5" fill="none" data-name="AddressController"></path>
+<path d="M593.0 100.5 L887.0 100.5" fill="none" data-name="AddressController"></path>
+</g>
+<g transform="translate(593, 36.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="AddressController" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="AddressController" data-compartment="0">
+<a id="src/address/address.controller.ts.AddressController" xlink:href="src/address/address.controller.ts"><text x="139.0" y="14.1" stroke="none" text-anchor="middle" data-name="AddressController" data-compartment="0">AddressController</text></a>
+
+</g>
+</g>
+<g transform="translate(593, 68.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="AddressController" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="AddressController" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="AddressController" data-compartment="1">-service: AddressService</text>
+
+</g>
+</g>
+<g transform="translate(593, 100.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="AddressController" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="AddressController" data-compartment="2">
+<text x="0.0" y="14.1" stroke="none" data-name="AddressController" data-compartment="2">+create(): Promise&lt;any&gt;</text>
+<text x="0.0" y="30.3" stroke="none" data-name="AddressController" data-compartment="2">+findAll(): Promise&lt;Address[]&gt;</text>
+<text x="0.0" y="46.5" stroke="none" data-name="AddressController" data-compartment="2">+findOne(): Promise&lt;Address&gt;</text>
+<text x="0.0" y="62.7" stroke="none" data-name="AddressController" data-compartment="2">+update(): Promise&lt;UpdateResult&gt;</text>
+<text x="0.0" y="78.9" stroke="none" data-name="AddressController" data-compartment="2">+remove(): Promise&lt;DeleteResult&gt;</text>
+
+</g>
+</g>
+</g>
+<g data-name="AddressModule">
+<g fill="#eee8d5" stroke="#33322E" data-name="AddressModule">
+<rect x="927.0" y="93.0" height="48.0" width="139.0" data-name="AddressModule"></rect>
+<path d="M927.0 125.0 L1066.0 125.0" fill="none" data-name="AddressModule"></path>
+<path d="M927.0 133.0 L1066.0 133.0" fill="none" data-name="AddressModule"></path>
+</g>
+<g transform="translate(927, 93)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="AddressModule" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="AddressModule" data-compartment="0">
+<a id="src/address/address.module.ts.AddressModule" xlink:href="src/address/address.module.ts"><text x="61.5" y="14.1" stroke="none" text-anchor="middle" data-name="AddressModule" data-compartment="0">AddressModule</text></a>
+
+</g>
+</g>
+<g transform="translate(927, 125)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="AddressModule" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" data-name="AddressModule" data-compartment="1">
+
+</g>
+</g>
+<g transform="translate(927, 133)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="AddressModule" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="AddressModule" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="AddressService">
+<g fill="#eee8d5" stroke="#33322E" data-name="AddressService">
+<rect x="1106.0" y="36.5" height="161.0" width="294.0" data-name="AddressService"></rect>
+<path d="M1106.0 68.5 L1400.0 68.5" fill="none" data-name="AddressService"></path>
+<path d="M1106.0 100.5 L1400.0 100.5" fill="none" data-name="AddressService"></path>
+</g>
+<g transform="translate(1106, 36.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="AddressService" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="AddressService" data-compartment="0">
+<a id="src/address/address.service.ts.AddressService" xlink:href="src/address/address.service.ts"><text x="139.0" y="14.1" stroke="none" text-anchor="middle" data-name="AddressService" data-compartment="0">AddressService</text></a>
+
+</g>
+</g>
+<g transform="translate(1106, 68.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="AddressService" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="AddressService" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="AddressService" data-compartment="1">-repo: Repository&lt;Address&gt;</text>
+
+</g>
+</g>
+<g transform="translate(1106, 100.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="AddressService" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="AddressService" data-compartment="2">
+<text x="0.0" y="14.1" stroke="none" data-name="AddressService" data-compartment="2">+create(): Promise&lt;any&gt;</text>
+<text x="0.0" y="30.3" stroke="none" data-name="AddressService" data-compartment="2">+findAll(): Promise&lt;Address[]&gt;</text>
+<text x="0.0" y="46.5" stroke="none" data-name="AddressService" data-compartment="2">+findOne(): Promise&lt;Address&gt;</text>
+<text x="0.0" y="62.7" stroke="none" data-name="AddressService" data-compartment="2">+update(): Promise&lt;UpdateResult&gt;</text>
+<text x="0.0" y="78.9" stroke="none" data-name="AddressService" data-compartment="2">+remove(): Promise&lt;DeleteResult&gt;</text>
+
+</g>
+</g>
+</g>
+<g data-name="AuthController">
+<g fill="#eee8d5" stroke="#33322E" data-name="AuthController">
+<rect x="1440.0" y="20.5" height="193.0" width="357.0" data-name="AuthController"></rect>
+<path d="M1440.0 52.5 L1797.0 52.5" fill="none" data-name="AuthController"></path>
+<path d="M1440.0 84.5 L1797.0 84.5" fill="none" data-name="AuthController"></path>
+</g>
+<g transform="translate(1440, 20.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="AuthController" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="AuthController" data-compartment="0">
+<a id="src/auth/auth.controller.ts.AuthController" xlink:href="src/auth/auth.controller.ts"><text x="170.5" y="14.1" stroke="none" text-anchor="middle" data-name="AuthController" data-compartment="0">AuthController</text></a>
+
+</g>
+</g>
+<g transform="translate(1440, 52.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="AuthController" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="AuthController" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="AuthController" data-compartment="1">-authService: AuthService</text>
+
+</g>
+</g>
+<g transform="translate(1440, 84.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="AuthController" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="AuthController" data-compartment="2">
+<text x="0.0" y="14.1" stroke="none" data-name="AuthController" data-compartment="2">+register(): Promise&lt;{ access_token: string</text>
+<text x="0.0" y="30.3" stroke="none" data-name="AuthController" data-compartment="2">tipo: string</text>
+<text x="0.0" y="46.5" stroke="none" data-name="AuthController" data-compartment="2">}&gt;</text>
+<text x="0.0" y="62.7" stroke="none" data-name="AuthController" data-compartment="2">+login(): Promise&lt;{ access_token: string</text>
+<text x="0.0" y="78.9" stroke="none" data-name="AuthController" data-compartment="2">tipo: string</text>
+<text x="0.0" y="95.1" stroke="none" data-name="AuthController" data-compartment="2">}&gt;</text>
+<text x="0.0" y="111.3" stroke="none" data-name="AuthController" data-compartment="2">+getProfile(): any</text>
+
+</g>
+</g>
+</g>
+<g data-name="AuthModule">
+<g fill="#eee8d5" stroke="#33322E" data-name="AuthModule">
+<rect x="1837.0" y="93.0" height="48.0" width="110.0" data-name="AuthModule"></rect>
+<path d="M1837.0 125.0 L1947.0 125.0" fill="none" data-name="AuthModule"></path>
+<path d="M1837.0 133.0 L1947.0 133.0" fill="none" data-name="AuthModule"></path>
+</g>
+<g transform="translate(1837, 93)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="AuthModule" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="AuthModule" data-compartment="0">
+<a id="src/auth/auth.module.ts.AuthModule" xlink:href="src/auth/auth.module.ts"><text x="47.0" y="14.1" stroke="none" text-anchor="middle" data-name="AuthModule" data-compartment="0">AuthModule</text></a>
+
+</g>
+</g>
+<g transform="translate(1837, 125)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="AuthModule" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" data-name="AuthModule" data-compartment="1">
+
+</g>
+</g>
+<g transform="translate(1837, 133)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="AuthModule" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="AuthModule" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="AuthService">
+<g fill="#eee8d5" stroke="#33322E" data-name="AuthService">
+<rect x="1987.0" y="4.0" height="226.0" width="357.0" data-name="AuthService"></rect>
+<path d="M1987.0 36.0 L2344.0 36.0" fill="none" data-name="AuthService"></path>
+<path d="M1987.0 84.0 L2344.0 84.0" fill="none" data-name="AuthService"></path>
+</g>
+<g transform="translate(1987, 4)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="AuthService" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="AuthService" data-compartment="0">
+<a id="src/auth/auth.service.ts.AuthService" xlink:href="src/auth/auth.service.ts"><text x="170.5" y="14.1" stroke="none" text-anchor="middle" data-name="AuthService" data-compartment="0">AuthService</text></a>
+
+</g>
+</g>
+<g transform="translate(1987, 36)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="AuthService" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="AuthService" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="AuthService" data-compartment="1">-usersRepository: Repository&lt;User&gt;</text>
+<text x="0.0" y="30.3" stroke="none" data-name="AuthService" data-compartment="1">-jwtService: JwtService</text>
+
+</g>
+</g>
+<g transform="translate(1987, 84)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="AuthService" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="AuthService" data-compartment="2">
+<text x="0.0" y="14.1" stroke="none" data-name="AuthService" data-compartment="2">+generateToken(): string</text>
+<text x="0.0" y="30.3" stroke="none" data-name="AuthService" data-compartment="2">+register(): Promise&lt;{ access_token: string</text>
+<text x="0.0" y="46.5" stroke="none" data-name="AuthService" data-compartment="2">tipo: string</text>
+<text x="0.0" y="62.7" stroke="none" data-name="AuthService" data-compartment="2">}&gt;</text>
+<text x="0.0" y="78.9" stroke="none" data-name="AuthService" data-compartment="2">+validateUser(): Promise&lt;User&gt;</text>
+<text x="0.0" y="95.1" stroke="none" data-name="AuthService" data-compartment="2">+login(): Promise&lt;{ access_token: string</text>
+<text x="0.0" y="111.3" stroke="none" data-name="AuthService" data-compartment="2">tipo: string</text>
+<text x="0.0" y="127.5" stroke="none" data-name="AuthService" data-compartment="2">}&gt;</text>
+
+</g>
+</g>
+</g>
+<g data-name="JwtAuthGuard">
+<g fill="#eee8d5" stroke="#33322E" data-name="JwtAuthGuard">
+<rect x="2384.0" y="93.0" height="48.0" width="127.0" data-name="JwtAuthGuard"></rect>
+<path d="M2384.0 125.0 L2511.0 125.0" fill="none" data-name="JwtAuthGuard"></path>
+<path d="M2384.0 133.0 L2511.0 133.0" fill="none" data-name="JwtAuthGuard"></path>
+</g>
+<g transform="translate(2384, 93)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="JwtAuthGuard" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="JwtAuthGuard" data-compartment="0">
+<a id="src/auth/jwt-auth.guard.ts.JwtAuthGuard" xlink:href="src/auth/jwt-auth.guard.ts"><text x="55.5" y="14.1" stroke="none" text-anchor="middle" data-name="JwtAuthGuard" data-compartment="0">JwtAuthGuard</text></a>
+
+</g>
+</g>
+<g transform="translate(2384, 125)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="JwtAuthGuard" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" data-name="JwtAuthGuard" data-compartment="1">
+
+</g>
+</g>
+<g transform="translate(2384, 133)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="JwtAuthGuard" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="JwtAuthGuard" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="JwtStrategy">
+<g fill="#eee8d5" stroke="#33322E" data-name="JwtStrategy">
+<rect x="2551.0" y="64.5" height="105.0" width="248.0" data-name="JwtStrategy"></rect>
+<path d="M2551.0 96.5 L2799.0 96.5" fill="none" data-name="JwtStrategy"></path>
+<path d="M2551.0 104.5 L2799.0 104.5" fill="none" data-name="JwtStrategy"></path>
+</g>
+<g transform="translate(2551, 64.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="JwtStrategy" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="JwtStrategy" data-compartment="0">
+<a id="src/auth/jwt.strategy.ts.JwtStrategy" xlink:href="src/auth/jwt.strategy.ts"><text x="116.0" y="14.1" stroke="none" text-anchor="middle" data-name="JwtStrategy" data-compartment="0">JwtStrategy</text></a>
+
+</g>
+</g>
+<g transform="translate(2551, 96.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="JwtStrategy" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" data-name="JwtStrategy" data-compartment="1">
+
+</g>
+</g>
+<g transform="translate(2551, 104.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="JwtStrategy" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="JwtStrategy" data-compartment="2">
+<text x="0.0" y="14.1" stroke="none" data-name="JwtStrategy" data-compartment="2">+validate(): Promise&lt;{ id: any</text>
+<text x="0.0" y="30.3" stroke="none" data-name="JwtStrategy" data-compartment="2">email: any</text>
+<text x="0.0" y="46.5" stroke="none" data-name="JwtStrategy" data-compartment="2">}&gt;</text>
+
+</g>
+</g>
+</g>
+<g data-name="CategoryController">
+<g fill="#eee8d5" stroke="#33322E" data-name="CategoryController">
+<rect x="2839.0" y="36.5" height="161.0" width="294.0" data-name="CategoryController"></rect>
+<path d="M2839.0 68.5 L3133.0 68.5" fill="none" data-name="CategoryController"></path>
+<path d="M2839.0 100.5 L3133.0 100.5" fill="none" data-name="CategoryController"></path>
+</g>
+<g transform="translate(2839, 36.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="CategoryController" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="CategoryController" data-compartment="0">
+<a id="src/category/category.controller.ts.CategoryController" xlink:href="src/category/category.controller.ts"><text x="139.0" y="14.1" stroke="none" text-anchor="middle" data-name="CategoryController" data-compartment="0">CategoryController</text></a>
+
+</g>
+</g>
+<g transform="translate(2839, 68.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="CategoryController" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="CategoryController" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="CategoryController" data-compartment="1">-service: CategoryService</text>
+
+</g>
+</g>
+<g transform="translate(2839, 100.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="CategoryController" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="CategoryController" data-compartment="2">
+<text x="0.0" y="14.1" stroke="none" data-name="CategoryController" data-compartment="2">+create(): Promise&lt;any&gt;</text>
+<text x="0.0" y="30.3" stroke="none" data-name="CategoryController" data-compartment="2">+findAll(): Promise&lt;Category[]&gt;</text>
+<text x="0.0" y="46.5" stroke="none" data-name="CategoryController" data-compartment="2">+findOne(): Promise&lt;Category&gt;</text>
+<text x="0.0" y="62.7" stroke="none" data-name="CategoryController" data-compartment="2">+update(): Promise&lt;UpdateResult&gt;</text>
+<text x="0.0" y="78.9" stroke="none" data-name="CategoryController" data-compartment="2">+remove(): Promise&lt;DeleteResult&gt;</text>
+
+</g>
+</g>
+</g>
+<g data-name="CategoryModule">
+<g fill="#eee8d5" stroke="#33322E" data-name="CategoryModule">
+<rect x="3173.0" y="93.0" height="48.0" width="146.0" data-name="CategoryModule"></rect>
+<path d="M3173.0 125.0 L3319.0 125.0" fill="none" data-name="CategoryModule"></path>
+<path d="M3173.0 133.0 L3319.0 133.0" fill="none" data-name="CategoryModule"></path>
+</g>
+<g transform="translate(3173, 93)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="CategoryModule" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="CategoryModule" data-compartment="0">
+<a id="src/category/category.module.ts.CategoryModule" xlink:href="src/category/category.module.ts"><text x="65.0" y="14.1" stroke="none" text-anchor="middle" data-name="CategoryModule" data-compartment="0">CategoryModule</text></a>
+
+</g>
+</g>
+<g transform="translate(3173, 125)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="CategoryModule" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" data-name="CategoryModule" data-compartment="1">
+
+</g>
+</g>
+<g transform="translate(3173, 133)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="CategoryModule" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="CategoryModule" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="CategoryService">
+<g fill="#eee8d5" stroke="#33322E" data-name="CategoryService">
+<rect x="3359.0" y="36.5" height="161.0" width="294.0" data-name="CategoryService"></rect>
+<path d="M3359.0 68.5 L3653.0 68.5" fill="none" data-name="CategoryService"></path>
+<path d="M3359.0 100.5 L3653.0 100.5" fill="none" data-name="CategoryService"></path>
+</g>
+<g transform="translate(3359, 36.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="CategoryService" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="CategoryService" data-compartment="0">
+<a id="src/category/category.service.ts.CategoryService" xlink:href="src/category/category.service.ts"><text x="139.0" y="14.1" stroke="none" text-anchor="middle" data-name="CategoryService" data-compartment="0">CategoryService</text></a>
+
+</g>
+</g>
+<g transform="translate(3359, 68.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="CategoryService" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="CategoryService" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="CategoryService" data-compartment="1">-repo: Repository&lt;Category&gt;</text>
+
+</g>
+</g>
+<g transform="translate(3359, 100.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="CategoryService" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="CategoryService" data-compartment="2">
+<text x="0.0" y="14.1" stroke="none" data-name="CategoryService" data-compartment="2">+create(): Promise&lt;any&gt;</text>
+<text x="0.0" y="30.3" stroke="none" data-name="CategoryService" data-compartment="2">+findAll(): Promise&lt;Category[]&gt;</text>
+<text x="0.0" y="46.5" stroke="none" data-name="CategoryService" data-compartment="2">+findOne(): Promise&lt;Category&gt;</text>
+<text x="0.0" y="62.7" stroke="none" data-name="CategoryService" data-compartment="2">+update(): Promise&lt;UpdateResult&gt;</text>
+<text x="0.0" y="78.9" stroke="none" data-name="CategoryService" data-compartment="2">+remove(): Promise&lt;DeleteResult&gt;</text>
+
+</g>
+</g>
+</g>
+<g data-name="FavoriteRestaurantController">
+<g fill="#eee8d5" stroke="#33322E" data-name="FavoriteRestaurantController">
+<rect x="3693.0" y="36.5" height="161.0" width="299.0" data-name="FavoriteRestaurantController"></rect>
+<path d="M3693.0 68.5 L3992.0 68.5" fill="none" data-name="FavoriteRestaurantController"></path>
+<path d="M3693.0 100.5 L3992.0 100.5" fill="none" data-name="FavoriteRestaurantController"></path>
+</g>
+<g transform="translate(3693, 36.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="FavoriteRestaurantController" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="FavoriteRestaurantController" data-compartment="0">
+<a id="src/favorit-restaurant/favorit-restaurant.controller.ts.FavoriteRestaurantController" xlink:href="src/favorit-restaurant/favorit-restaurant.controller.ts"><text x="141.5" y="14.1" stroke="none" text-anchor="middle" data-name="FavoriteRestaurantController" data-compartment="0">FavoriteRestaurantController</text></a>
+
+</g>
+</g>
+<g transform="translate(3693, 68.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="FavoriteRestaurantController" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="FavoriteRestaurantController" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="FavoriteRestaurantController" data-compartment="1">-service: FavoriteRestaurantService</text>
+
+</g>
+</g>
+<g transform="translate(3693, 100.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="FavoriteRestaurantController" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="FavoriteRestaurantController" data-compartment="2">
+<text x="0.0" y="14.1" stroke="none" data-name="FavoriteRestaurantController" data-compartment="2">+create(): any</text>
+<text x="0.0" y="30.3" stroke="none" data-name="FavoriteRestaurantController" data-compartment="2">+findAll(): any</text>
+<text x="0.0" y="46.5" stroke="none" data-name="FavoriteRestaurantController" data-compartment="2">+findOne(): any</text>
+<text x="0.0" y="62.7" stroke="none" data-name="FavoriteRestaurantController" data-compartment="2">+update(): any</text>
+<text x="0.0" y="78.9" stroke="none" data-name="FavoriteRestaurantController" data-compartment="2">+remove(): any</text>
+
+</g>
+</g>
+</g>
+<g data-name="FavoritRestaurantModule">
+<g fill="#eee8d5" stroke="#33322E" data-name="FavoritRestaurantModule">
+<rect x="4032.0" y="93.0" height="48.0" width="215.0" data-name="FavoritRestaurantModule"></rect>
+<path d="M4032.0 125.0 L4247.0 125.0" fill="none" data-name="FavoritRestaurantModule"></path>
+<path d="M4032.0 133.0 L4247.0 133.0" fill="none" data-name="FavoritRestaurantModule"></path>
+</g>
+<g transform="translate(4032, 93)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="FavoritRestaurantModule" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="FavoritRestaurantModule" data-compartment="0">
+<a id="src/favorit-restaurant/favorit-restaurant.module.ts.FavoritRestaurantModule" xlink:href="src/favorit-restaurant/favorit-restaurant.module.ts"><text x="99.5" y="14.1" stroke="none" text-anchor="middle" data-name="FavoritRestaurantModule" data-compartment="0">FavoritRestaurantModule</text></a>
+
+</g>
+</g>
+<g transform="translate(4032, 125)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="FavoritRestaurantModule" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" data-name="FavoritRestaurantModule" data-compartment="1">
+
+</g>
+</g>
+<g transform="translate(4032, 133)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="FavoritRestaurantModule" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="FavoritRestaurantModule" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="FavoriteRestaurantService">
+<g fill="#eee8d5" stroke="#33322E" data-name="FavoriteRestaurantService">
+<rect x="4287.0" y="36.5" height="161.0" width="345.0" data-name="FavoriteRestaurantService"></rect>
+<path d="M4287.0 68.5 L4632.0 68.5" fill="none" data-name="FavoriteRestaurantService"></path>
+<path d="M4287.0 100.5 L4632.0 100.5" fill="none" data-name="FavoriteRestaurantService"></path>
+</g>
+<g transform="translate(4287, 36.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="FavoriteRestaurantService" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="FavoriteRestaurantService" data-compartment="0">
+<a id="src/favorit-restaurant/favorit-restaurant.service.ts.FavoriteRestaurantService" xlink:href="src/favorit-restaurant/favorit-restaurant.service.ts"><text x="164.5" y="14.1" stroke="none" text-anchor="middle" data-name="FavoriteRestaurantService" data-compartment="0">FavoriteRestaurantService</text></a>
+
+</g>
+</g>
+<g transform="translate(4287, 68.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="FavoriteRestaurantService" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="FavoriteRestaurantService" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="FavoriteRestaurantService" data-compartment="1">-repo: Repository&lt;FavoriteRestaurant&gt;</text>
+
+</g>
+</g>
+<g transform="translate(4287, 100.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="FavoriteRestaurantService" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="FavoriteRestaurantService" data-compartment="2">
+<text x="0.0" y="14.1" stroke="none" data-name="FavoriteRestaurantService" data-compartment="2">+create(): Promise&lt;any&gt;</text>
+<text x="0.0" y="30.3" stroke="none" data-name="FavoriteRestaurantService" data-compartment="2">+findAll(): Promise&lt;FavoriteRestaurant[]&gt;</text>
+<text x="0.0" y="46.5" stroke="none" data-name="FavoriteRestaurantService" data-compartment="2">+findOne(): Promise&lt;FavoriteRestaurant&gt;</text>
+<text x="0.0" y="62.7" stroke="none" data-name="FavoriteRestaurantService" data-compartment="2">+update(): Promise&lt;UpdateResult&gt;</text>
+<text x="0.0" y="78.9" stroke="none" data-name="FavoriteRestaurantService" data-compartment="2">+remove(): Promise&lt;DeleteResult&gt;</text>
+
+</g>
+</g>
+</g>
+<g data-name="OrderController">
+<g fill="#eee8d5" stroke="#33322E" data-name="OrderController">
+<rect x="4672.0" y="36.5" height="161.0" width="294.0" data-name="OrderController"></rect>
+<path d="M4672.0 68.5 L4966.0 68.5" fill="none" data-name="OrderController"></path>
+<path d="M4672.0 100.5 L4966.0 100.5" fill="none" data-name="OrderController"></path>
+</g>
+<g transform="translate(4672, 36.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="OrderController" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="OrderController" data-compartment="0">
+<a id="src/order/order.controller.ts.OrderController" xlink:href="src/order/order.controller.ts"><text x="139.0" y="14.1" stroke="none" text-anchor="middle" data-name="OrderController" data-compartment="0">OrderController</text></a>
+
+</g>
+</g>
+<g transform="translate(4672, 68.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="OrderController" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="OrderController" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="OrderController" data-compartment="1">-service: OrderService</text>
+
+</g>
+</g>
+<g transform="translate(4672, 100.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="OrderController" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="OrderController" data-compartment="2">
+<text x="0.0" y="14.1" stroke="none" data-name="OrderController" data-compartment="2">+create(): Promise&lt;any&gt;</text>
+<text x="0.0" y="30.3" stroke="none" data-name="OrderController" data-compartment="2">+findAll(): Promise&lt;Order[]&gt;</text>
+<text x="0.0" y="46.5" stroke="none" data-name="OrderController" data-compartment="2">+findOne(): Promise&lt;Order&gt;</text>
+<text x="0.0" y="62.7" stroke="none" data-name="OrderController" data-compartment="2">+update(): Promise&lt;UpdateResult&gt;</text>
+<text x="0.0" y="78.9" stroke="none" data-name="OrderController" data-compartment="2">+remove(): Promise&lt;DeleteResult&gt;</text>
+
+</g>
+</g>
+</g>
+<g data-name="OrderModule">
+<g fill="#eee8d5" stroke="#33322E" data-name="OrderModule">
+<rect x="5006.0" y="93.0" height="48.0" width="119.0" data-name="OrderModule"></rect>
+<path d="M5006.0 125.0 L5125.0 125.0" fill="none" data-name="OrderModule"></path>
+<path d="M5006.0 133.0 L5125.0 133.0" fill="none" data-name="OrderModule"></path>
+</g>
+<g transform="translate(5006, 93)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="OrderModule" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="OrderModule" data-compartment="0">
+<a id="src/order/order.module.ts.OrderModule" xlink:href="src/order/order.module.ts"><text x="51.5" y="14.1" stroke="none" text-anchor="middle" data-name="OrderModule" data-compartment="0">OrderModule</text></a>
+
+</g>
+</g>
+<g transform="translate(5006, 125)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="OrderModule" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" data-name="OrderModule" data-compartment="1">
+
+</g>
+</g>
+<g transform="translate(5006, 133)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="OrderModule" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="OrderModule" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="OrderService">
+<g fill="#eee8d5" stroke="#33322E" data-name="OrderService">
+<rect x="5165.0" y="36.5" height="161.0" width="294.0" data-name="OrderService"></rect>
+<path d="M5165.0 68.5 L5459.0 68.5" fill="none" data-name="OrderService"></path>
+<path d="M5165.0 100.5 L5459.0 100.5" fill="none" data-name="OrderService"></path>
+</g>
+<g transform="translate(5165, 36.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="OrderService" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="OrderService" data-compartment="0">
+<a id="src/order/order.service.ts.OrderService" xlink:href="src/order/order.service.ts"><text x="139.0" y="14.1" stroke="none" text-anchor="middle" data-name="OrderService" data-compartment="0">OrderService</text></a>
+
+</g>
+</g>
+<g transform="translate(5165, 68.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="OrderService" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="OrderService" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="OrderService" data-compartment="1">-repo: Repository&lt;Order&gt;</text>
+
+</g>
+</g>
+<g transform="translate(5165, 100.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="OrderService" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="OrderService" data-compartment="2">
+<text x="0.0" y="14.1" stroke="none" data-name="OrderService" data-compartment="2">+create(): Promise&lt;any&gt;</text>
+<text x="0.0" y="30.3" stroke="none" data-name="OrderService" data-compartment="2">+findAll(): Promise&lt;Order[]&gt;</text>
+<text x="0.0" y="46.5" stroke="none" data-name="OrderService" data-compartment="2">+findOne(): Promise&lt;Order&gt;</text>
+<text x="0.0" y="62.7" stroke="none" data-name="OrderService" data-compartment="2">+update(): Promise&lt;UpdateResult&gt;</text>
+<text x="0.0" y="78.9" stroke="none" data-name="OrderService" data-compartment="2">+remove(): Promise&lt;DeleteResult&gt;</text>
+
+</g>
+</g>
+</g>
+<g data-name="OrderItemController">
+<g fill="#eee8d5" stroke="#33322E" data-name="OrderItemController">
+<rect x="5499.0" y="36.5" height="161.0" width="294.0" data-name="OrderItemController"></rect>
+<path d="M5499.0 68.5 L5793.0 68.5" fill="none" data-name="OrderItemController"></path>
+<path d="M5499.0 100.5 L5793.0 100.5" fill="none" data-name="OrderItemController"></path>
+</g>
+<g transform="translate(5499, 36.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="OrderItemController" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="OrderItemController" data-compartment="0">
+<a id="src/order-item/order-item.controller.ts.OrderItemController" xlink:href="src/order-item/order-item.controller.ts"><text x="139.0" y="14.1" stroke="none" text-anchor="middle" data-name="OrderItemController" data-compartment="0">OrderItemController</text></a>
+
+</g>
+</g>
+<g transform="translate(5499, 68.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="OrderItemController" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="OrderItemController" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="OrderItemController" data-compartment="1">-service: OrderItemService</text>
+
+</g>
+</g>
+<g transform="translate(5499, 100.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="OrderItemController" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="OrderItemController" data-compartment="2">
+<text x="0.0" y="14.1" stroke="none" data-name="OrderItemController" data-compartment="2">+create(): Promise&lt;any&gt;</text>
+<text x="0.0" y="30.3" stroke="none" data-name="OrderItemController" data-compartment="2">+findAll(): Promise&lt;OrderItem[]&gt;</text>
+<text x="0.0" y="46.5" stroke="none" data-name="OrderItemController" data-compartment="2">+findOne(): Promise&lt;OrderItem&gt;</text>
+<text x="0.0" y="62.7" stroke="none" data-name="OrderItemController" data-compartment="2">+update(): Promise&lt;UpdateResult&gt;</text>
+<text x="0.0" y="78.9" stroke="none" data-name="OrderItemController" data-compartment="2">+remove(): Promise&lt;DeleteResult&gt;</text>
+
+</g>
+</g>
+</g>
+<g data-name="OrderItemModule">
+<g fill="#eee8d5" stroke="#33322E" data-name="OrderItemModule">
+<rect x="5833.0" y="93.0" height="48.0" width="153.0" data-name="OrderItemModule"></rect>
+<path d="M5833.0 125.0 L5986.0 125.0" fill="none" data-name="OrderItemModule"></path>
+<path d="M5833.0 133.0 L5986.0 133.0" fill="none" data-name="OrderItemModule"></path>
+</g>
+<g transform="translate(5833, 93)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="OrderItemModule" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="OrderItemModule" data-compartment="0">
+<a id="src/order-item/order-item.module.ts.OrderItemModule" xlink:href="src/order-item/order-item.module.ts"><text x="68.5" y="14.1" stroke="none" text-anchor="middle" data-name="OrderItemModule" data-compartment="0">OrderItemModule</text></a>
+
+</g>
+</g>
+<g transform="translate(5833, 125)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="OrderItemModule" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" data-name="OrderItemModule" data-compartment="1">
+
+</g>
+</g>
+<g transform="translate(5833, 133)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="OrderItemModule" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="OrderItemModule" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="OrderItemService">
+<g fill="#eee8d5" stroke="#33322E" data-name="OrderItemService">
+<rect x="6026.0" y="36.5" height="161.0" width="294.0" data-name="OrderItemService"></rect>
+<path d="M6026.0 68.5 L6320.0 68.5" fill="none" data-name="OrderItemService"></path>
+<path d="M6026.0 100.5 L6320.0 100.5" fill="none" data-name="OrderItemService"></path>
+</g>
+<g transform="translate(6026, 36.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="OrderItemService" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="OrderItemService" data-compartment="0">
+<a id="src/order-item/order-item.service.ts.OrderItemService" xlink:href="src/order-item/order-item.service.ts"><text x="139.0" y="14.1" stroke="none" text-anchor="middle" data-name="OrderItemService" data-compartment="0">OrderItemService</text></a>
+
+</g>
+</g>
+<g transform="translate(6026, 68.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="OrderItemService" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="OrderItemService" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="OrderItemService" data-compartment="1">-repo: Repository&lt;OrderItem&gt;</text>
+
+</g>
+</g>
+<g transform="translate(6026, 100.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="OrderItemService" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="OrderItemService" data-compartment="2">
+<text x="0.0" y="14.1" stroke="none" data-name="OrderItemService" data-compartment="2">+create(): Promise&lt;any&gt;</text>
+<text x="0.0" y="30.3" stroke="none" data-name="OrderItemService" data-compartment="2">+findAll(): Promise&lt;OrderItem[]&gt;</text>
+<text x="0.0" y="46.5" stroke="none" data-name="OrderItemService" data-compartment="2">+findOne(): Promise&lt;OrderItem&gt;</text>
+<text x="0.0" y="62.7" stroke="none" data-name="OrderItemService" data-compartment="2">+update(): Promise&lt;UpdateResult&gt;</text>
+<text x="0.0" y="78.9" stroke="none" data-name="OrderItemService" data-compartment="2">+remove(): Promise&lt;DeleteResult&gt;</text>
+
+</g>
+</g>
+</g>
+<g data-name="PaymentController">
+<g fill="#eee8d5" stroke="#33322E" data-name="PaymentController">
+<rect x="6360.0" y="36.5" height="161.0" width="294.0" data-name="PaymentController"></rect>
+<path d="M6360.0 68.5 L6654.0 68.5" fill="none" data-name="PaymentController"></path>
+<path d="M6360.0 100.5 L6654.0 100.5" fill="none" data-name="PaymentController"></path>
+</g>
+<g transform="translate(6360, 36.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="PaymentController" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="PaymentController" data-compartment="0">
+<a id="src/payment/payment.controller.ts.PaymentController" xlink:href="src/payment/payment.controller.ts"><text x="139.0" y="14.1" stroke="none" text-anchor="middle" data-name="PaymentController" data-compartment="0">PaymentController</text></a>
+
+</g>
+</g>
+<g transform="translate(6360, 68.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="PaymentController" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="PaymentController" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="PaymentController" data-compartment="1">-service: PaymentService</text>
+
+</g>
+</g>
+<g transform="translate(6360, 100.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="PaymentController" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="PaymentController" data-compartment="2">
+<text x="0.0" y="14.1" stroke="none" data-name="PaymentController" data-compartment="2">+create(): Promise&lt;any&gt;</text>
+<text x="0.0" y="30.3" stroke="none" data-name="PaymentController" data-compartment="2">+findAll(): Promise&lt;Payment[]&gt;</text>
+<text x="0.0" y="46.5" stroke="none" data-name="PaymentController" data-compartment="2">+findOne(): Promise&lt;Payment&gt;</text>
+<text x="0.0" y="62.7" stroke="none" data-name="PaymentController" data-compartment="2">+update(): Promise&lt;UpdateResult&gt;</text>
+<text x="0.0" y="78.9" stroke="none" data-name="PaymentController" data-compartment="2">+remove(): Promise&lt;DeleteResult&gt;</text>
+
+</g>
+</g>
+</g>
+<g data-name="PaymentModule">
+<g fill="#eee8d5" stroke="#33322E" data-name="PaymentModule">
+<rect x="6694.0" y="93.0" height="48.0" width="143.0" data-name="PaymentModule"></rect>
+<path d="M6694.0 125.0 L6837.0 125.0" fill="none" data-name="PaymentModule"></path>
+<path d="M6694.0 133.0 L6837.0 133.0" fill="none" data-name="PaymentModule"></path>
+</g>
+<g transform="translate(6694, 93)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="PaymentModule" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="PaymentModule" data-compartment="0">
+<a id="src/payment/payment.module.ts.PaymentModule" xlink:href="src/payment/payment.module.ts"><text x="63.5" y="14.1" stroke="none" text-anchor="middle" data-name="PaymentModule" data-compartment="0">PaymentModule</text></a>
+
+</g>
+</g>
+<g transform="translate(6694, 125)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="PaymentModule" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" data-name="PaymentModule" data-compartment="1">
+
+</g>
+</g>
+<g transform="translate(6694, 133)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="PaymentModule" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="PaymentModule" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="PaymentService">
+<g fill="#eee8d5" stroke="#33322E" data-name="PaymentService">
+<rect x="6877.0" y="36.5" height="161.0" width="294.0" data-name="PaymentService"></rect>
+<path d="M6877.0 68.5 L7171.0 68.5" fill="none" data-name="PaymentService"></path>
+<path d="M6877.0 100.5 L7171.0 100.5" fill="none" data-name="PaymentService"></path>
+</g>
+<g transform="translate(6877, 36.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="PaymentService" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="PaymentService" data-compartment="0">
+<a id="src/payment/payment.service.ts.PaymentService" xlink:href="src/payment/payment.service.ts"><text x="139.0" y="14.1" stroke="none" text-anchor="middle" data-name="PaymentService" data-compartment="0">PaymentService</text></a>
+
+</g>
+</g>
+<g transform="translate(6877, 68.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="PaymentService" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="PaymentService" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="PaymentService" data-compartment="1">-repo: Repository&lt;Payment&gt;</text>
+
+</g>
+</g>
+<g transform="translate(6877, 100.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="PaymentService" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="PaymentService" data-compartment="2">
+<text x="0.0" y="14.1" stroke="none" data-name="PaymentService" data-compartment="2">+create(): Promise&lt;any&gt;</text>
+<text x="0.0" y="30.3" stroke="none" data-name="PaymentService" data-compartment="2">+findAll(): Promise&lt;Payment[]&gt;</text>
+<text x="0.0" y="46.5" stroke="none" data-name="PaymentService" data-compartment="2">+findOne(): Promise&lt;Payment&gt;</text>
+<text x="0.0" y="62.7" stroke="none" data-name="PaymentService" data-compartment="2">+update(): Promise&lt;UpdateResult&gt;</text>
+<text x="0.0" y="78.9" stroke="none" data-name="PaymentService" data-compartment="2">+remove(): Promise&lt;DeleteResult&gt;</text>
+
+</g>
+</g>
+</g>
+<g data-name="ProductController">
+<g fill="#eee8d5" stroke="#33322E" data-name="ProductController">
+<rect x="7211.0" y="36.5" height="161.0" width="294.0" data-name="ProductController"></rect>
+<path d="M7211.0 68.5 L7505.0 68.5" fill="none" data-name="ProductController"></path>
+<path d="M7211.0 100.5 L7505.0 100.5" fill="none" data-name="ProductController"></path>
+</g>
+<g transform="translate(7211, 36.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="ProductController" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="ProductController" data-compartment="0">
+<a id="src/product/product.controller.ts.ProductController" xlink:href="src/product/product.controller.ts"><text x="139.0" y="14.1" stroke="none" text-anchor="middle" data-name="ProductController" data-compartment="0">ProductController</text></a>
+
+</g>
+</g>
+<g transform="translate(7211, 68.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="ProductController" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="ProductController" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="ProductController" data-compartment="1">-service: ProductService</text>
+
+</g>
+</g>
+<g transform="translate(7211, 100.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="ProductController" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="ProductController" data-compartment="2">
+<text x="0.0" y="14.1" stroke="none" data-name="ProductController" data-compartment="2">+create(): Promise&lt;any&gt;</text>
+<text x="0.0" y="30.3" stroke="none" data-name="ProductController" data-compartment="2">+findAll(): Promise&lt;Product[]&gt;</text>
+<text x="0.0" y="46.5" stroke="none" data-name="ProductController" data-compartment="2">+findOne(): Promise&lt;Product&gt;</text>
+<text x="0.0" y="62.7" stroke="none" data-name="ProductController" data-compartment="2">+update(): Promise&lt;UpdateResult&gt;</text>
+<text x="0.0" y="78.9" stroke="none" data-name="ProductController" data-compartment="2">+remove(): Promise&lt;DeleteResult&gt;</text>
+
+</g>
+</g>
+</g>
+<g data-name="ProductModule">
+<g fill="#eee8d5" stroke="#33322E" data-name="ProductModule">
+<rect x="7545.0" y="93.0" height="48.0" width="135.0" data-name="ProductModule"></rect>
+<path d="M7545.0 125.0 L7680.0 125.0" fill="none" data-name="ProductModule"></path>
+<path d="M7545.0 133.0 L7680.0 133.0" fill="none" data-name="ProductModule"></path>
+</g>
+<g transform="translate(7545, 93)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="ProductModule" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="ProductModule" data-compartment="0">
+<a id="src/product/product.module.ts.ProductModule" xlink:href="src/product/product.module.ts"><text x="59.5" y="14.1" stroke="none" text-anchor="middle" data-name="ProductModule" data-compartment="0">ProductModule</text></a>
+
+</g>
+</g>
+<g transform="translate(7545, 125)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="ProductModule" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" data-name="ProductModule" data-compartment="1">
+
+</g>
+</g>
+<g transform="translate(7545, 133)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="ProductModule" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="ProductModule" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="ProductService">
+<g fill="#eee8d5" stroke="#33322E" data-name="ProductService">
+<rect x="7720.0" y="36.5" height="161.0" width="294.0" data-name="ProductService"></rect>
+<path d="M7720.0 68.5 L8014.0 68.5" fill="none" data-name="ProductService"></path>
+<path d="M7720.0 100.5 L8014.0 100.5" fill="none" data-name="ProductService"></path>
+</g>
+<g transform="translate(7720, 36.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="ProductService" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="ProductService" data-compartment="0">
+<a id="src/product/product.service.ts.ProductService" xlink:href="src/product/product.service.ts"><text x="139.0" y="14.1" stroke="none" text-anchor="middle" data-name="ProductService" data-compartment="0">ProductService</text></a>
+
+</g>
+</g>
+<g transform="translate(7720, 68.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="ProductService" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="ProductService" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="ProductService" data-compartment="1">-repo: Repository&lt;Product&gt;</text>
+
+</g>
+</g>
+<g transform="translate(7720, 100.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="ProductService" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="ProductService" data-compartment="2">
+<text x="0.0" y="14.1" stroke="none" data-name="ProductService" data-compartment="2">+create(): Promise&lt;any&gt;</text>
+<text x="0.0" y="30.3" stroke="none" data-name="ProductService" data-compartment="2">+findAll(): Promise&lt;Product[]&gt;</text>
+<text x="0.0" y="46.5" stroke="none" data-name="ProductService" data-compartment="2">+findOne(): Promise&lt;Product&gt;</text>
+<text x="0.0" y="62.7" stroke="none" data-name="ProductService" data-compartment="2">+update(): Promise&lt;UpdateResult&gt;</text>
+<text x="0.0" y="78.9" stroke="none" data-name="ProductService" data-compartment="2">+remove(): Promise&lt;DeleteResult&gt;</text>
+
+</g>
+</g>
+</g>
+<g data-name="RestaurantController">
+<g fill="#eee8d5" stroke="#33322E" data-name="RestaurantController">
+<rect x="8054.0" y="36.5" height="161.0" width="294.0" data-name="RestaurantController"></rect>
+<path d="M8054.0 68.5 L8348.0 68.5" fill="none" data-name="RestaurantController"></path>
+<path d="M8054.0 100.5 L8348.0 100.5" fill="none" data-name="RestaurantController"></path>
+</g>
+<g transform="translate(8054, 36.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="RestaurantController" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="RestaurantController" data-compartment="0">
+<a id="src/restaurant/restaurant.controller.ts.RestaurantController" xlink:href="src/restaurant/restaurant.controller.ts"><text x="139.0" y="14.1" stroke="none" text-anchor="middle" data-name="RestaurantController" data-compartment="0">RestaurantController</text></a>
+
+</g>
+</g>
+<g transform="translate(8054, 68.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="RestaurantController" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="RestaurantController" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="RestaurantController" data-compartment="1">-service: RestaurantService</text>
+
+</g>
+</g>
+<g transform="translate(8054, 100.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="RestaurantController" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="RestaurantController" data-compartment="2">
+<text x="0.0" y="14.1" stroke="none" data-name="RestaurantController" data-compartment="2">+create(): Promise&lt;any&gt;</text>
+<text x="0.0" y="30.3" stroke="none" data-name="RestaurantController" data-compartment="2">+findAll(): Promise&lt;Restaurant[]&gt;</text>
+<text x="0.0" y="46.5" stroke="none" data-name="RestaurantController" data-compartment="2">+findOne(): Promise&lt;Restaurant&gt;</text>
+<text x="0.0" y="62.7" stroke="none" data-name="RestaurantController" data-compartment="2">+update(): Promise&lt;UpdateResult&gt;</text>
+<text x="0.0" y="78.9" stroke="none" data-name="RestaurantController" data-compartment="2">+remove(): Promise&lt;DeleteResult&gt;</text>
+
+</g>
+</g>
+</g>
+<g data-name="RestaurantModule">
+<g fill="#eee8d5" stroke="#33322E" data-name="RestaurantModule">
+<rect x="8388.0" y="93.0" height="48.0" width="161.0" data-name="RestaurantModule"></rect>
+<path d="M8388.0 125.0 L8549.0 125.0" fill="none" data-name="RestaurantModule"></path>
+<path d="M8388.0 133.0 L8549.0 133.0" fill="none" data-name="RestaurantModule"></path>
+</g>
+<g transform="translate(8388, 93)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="RestaurantModule" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="RestaurantModule" data-compartment="0">
+<a id="src/restaurant/restaurant.module.ts.RestaurantModule" xlink:href="src/restaurant/restaurant.module.ts"><text x="72.5" y="14.1" stroke="none" text-anchor="middle" data-name="RestaurantModule" data-compartment="0">RestaurantModule</text></a>
+
+</g>
+</g>
+<g transform="translate(8388, 125)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="RestaurantModule" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" data-name="RestaurantModule" data-compartment="1">
+
+</g>
+</g>
+<g transform="translate(8388, 133)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="RestaurantModule" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="RestaurantModule" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="RestaurantService">
+<g fill="#eee8d5" stroke="#33322E" data-name="RestaurantService">
+<rect x="8589.0" y="36.5" height="161.0" width="294.0" data-name="RestaurantService"></rect>
+<path d="M8589.0 68.5 L8883.0 68.5" fill="none" data-name="RestaurantService"></path>
+<path d="M8589.0 100.5 L8883.0 100.5" fill="none" data-name="RestaurantService"></path>
+</g>
+<g transform="translate(8589, 36.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="RestaurantService" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="RestaurantService" data-compartment="0">
+<a id="src/restaurant/restaurant.service.ts.RestaurantService" xlink:href="src/restaurant/restaurant.service.ts"><text x="139.0" y="14.1" stroke="none" text-anchor="middle" data-name="RestaurantService" data-compartment="0">RestaurantService</text></a>
+
+</g>
+</g>
+<g transform="translate(8589, 68.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="RestaurantService" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="RestaurantService" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="RestaurantService" data-compartment="1">-repo: Repository&lt;Restaurant&gt;</text>
+
+</g>
+</g>
+<g transform="translate(8589, 100.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="RestaurantService" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="RestaurantService" data-compartment="2">
+<text x="0.0" y="14.1" stroke="none" data-name="RestaurantService" data-compartment="2">+create(): Promise&lt;any&gt;</text>
+<text x="0.0" y="30.3" stroke="none" data-name="RestaurantService" data-compartment="2">+findAll(): Promise&lt;Restaurant[]&gt;</text>
+<text x="0.0" y="46.5" stroke="none" data-name="RestaurantService" data-compartment="2">+findOne(): Promise&lt;Restaurant&gt;</text>
+<text x="0.0" y="62.7" stroke="none" data-name="RestaurantService" data-compartment="2">+update(): Promise&lt;UpdateResult&gt;</text>
+<text x="0.0" y="78.9" stroke="none" data-name="RestaurantService" data-compartment="2">+remove(): Promise&lt;DeleteResult&gt;</text>
+
+</g>
+</g>
+</g>
+<g data-name="ReviewController">
+<g fill="#eee8d5" stroke="#33322E" data-name="ReviewController">
+<rect x="8923.0" y="36.5" height="161.0" width="294.0" data-name="ReviewController"></rect>
+<path d="M8923.0 68.5 L9217.0 68.5" fill="none" data-name="ReviewController"></path>
+<path d="M8923.0 100.5 L9217.0 100.5" fill="none" data-name="ReviewController"></path>
+</g>
+<g transform="translate(8923, 36.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="ReviewController" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="ReviewController" data-compartment="0">
+<a id="src/review/review.controller.ts.ReviewController" xlink:href="src/review/review.controller.ts"><text x="139.0" y="14.1" stroke="none" text-anchor="middle" data-name="ReviewController" data-compartment="0">ReviewController</text></a>
+
+</g>
+</g>
+<g transform="translate(8923, 68.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="ReviewController" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="ReviewController" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="ReviewController" data-compartment="1">-service: ReviewService</text>
+
+</g>
+</g>
+<g transform="translate(8923, 100.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="ReviewController" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="ReviewController" data-compartment="2">
+<text x="0.0" y="14.1" stroke="none" data-name="ReviewController" data-compartment="2">+create(): Promise&lt;any&gt;</text>
+<text x="0.0" y="30.3" stroke="none" data-name="ReviewController" data-compartment="2">+findAll(): Promise&lt;Review[]&gt;</text>
+<text x="0.0" y="46.5" stroke="none" data-name="ReviewController" data-compartment="2">+findOne(): Promise&lt;Review&gt;</text>
+<text x="0.0" y="62.7" stroke="none" data-name="ReviewController" data-compartment="2">+update(): Promise&lt;UpdateResult&gt;</text>
+<text x="0.0" y="78.9" stroke="none" data-name="ReviewController" data-compartment="2">+remove(): Promise&lt;DeleteResult&gt;</text>
+
+</g>
+</g>
+</g>
+<g data-name="ReviewModule">
+<g fill="#eee8d5" stroke="#33322E" data-name="ReviewModule">
+<rect x="9257.0" y="93.0" height="48.0" width="131.0" data-name="ReviewModule"></rect>
+<path d="M9257.0 125.0 L9388.0 125.0" fill="none" data-name="ReviewModule"></path>
+<path d="M9257.0 133.0 L9388.0 133.0" fill="none" data-name="ReviewModule"></path>
+</g>
+<g transform="translate(9257, 93)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="ReviewModule" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="ReviewModule" data-compartment="0">
+<a id="src/review/review.module.ts.ReviewModule" xlink:href="src/review/review.module.ts"><text x="57.5" y="14.1" stroke="none" text-anchor="middle" data-name="ReviewModule" data-compartment="0">ReviewModule</text></a>
+
+</g>
+</g>
+<g transform="translate(9257, 125)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="ReviewModule" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" data-name="ReviewModule" data-compartment="1">
+
+</g>
+</g>
+<g transform="translate(9257, 133)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="ReviewModule" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="ReviewModule" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="ReviewService">
+<g fill="#eee8d5" stroke="#33322E" data-name="ReviewService">
+<rect x="9428.0" y="36.5" height="161.0" width="294.0" data-name="ReviewService"></rect>
+<path d="M9428.0 68.5 L9722.0 68.5" fill="none" data-name="ReviewService"></path>
+<path d="M9428.0 100.5 L9722.0 100.5" fill="none" data-name="ReviewService"></path>
+</g>
+<g transform="translate(9428, 36.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="ReviewService" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="ReviewService" data-compartment="0">
+<a id="src/review/review.service.ts.ReviewService" xlink:href="src/review/review.service.ts"><text x="139.0" y="14.1" stroke="none" text-anchor="middle" data-name="ReviewService" data-compartment="0">ReviewService</text></a>
+
+</g>
+</g>
+<g transform="translate(9428, 68.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="ReviewService" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="ReviewService" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="ReviewService" data-compartment="1">-repo: Repository&lt;Review&gt;</text>
+
+</g>
+</g>
+<g transform="translate(9428, 100.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="ReviewService" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="ReviewService" data-compartment="2">
+<text x="0.0" y="14.1" stroke="none" data-name="ReviewService" data-compartment="2">+create(): Promise&lt;any&gt;</text>
+<text x="0.0" y="30.3" stroke="none" data-name="ReviewService" data-compartment="2">+findAll(): Promise&lt;Review[]&gt;</text>
+<text x="0.0" y="46.5" stroke="none" data-name="ReviewService" data-compartment="2">+findOne(): Promise&lt;Review&gt;</text>
+<text x="0.0" y="62.7" stroke="none" data-name="ReviewService" data-compartment="2">+update(): Promise&lt;UpdateResult&gt;</text>
+<text x="0.0" y="78.9" stroke="none" data-name="ReviewService" data-compartment="2">+remove(): Promise&lt;DeleteResult&gt;</text>
+
+</g>
+</g>
+</g>
+<g data-name="TesteController">
+<g fill="#eee8d5" stroke="#33322E" data-name="TesteController">
+<rect x="9762.0" y="36.5" height="161.0" width="233.0" data-name="TesteController"></rect>
+<path d="M9762.0 68.5 L9995.0 68.5" fill="none" data-name="TesteController"></path>
+<path d="M9762.0 100.5 L9995.0 100.5" fill="none" data-name="TesteController"></path>
+</g>
+<g transform="translate(9762, 36.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="TesteController" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="TesteController" data-compartment="0">
+<a id="src/teste/teste.controller.ts.TesteController" xlink:href="src/teste/teste.controller.ts"><text x="108.5" y="14.1" stroke="none" text-anchor="middle" data-name="TesteController" data-compartment="0">TesteController</text></a>
+
+</g>
+</g>
+<g transform="translate(9762, 68.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="TesteController" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="TesteController" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="TesteController" data-compartment="1">-testeService: TesteService</text>
+
+</g>
+</g>
+<g transform="translate(9762, 100.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="TesteController" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="TesteController" data-compartment="2">
+<text x="0.0" y="14.1" stroke="none" data-name="TesteController" data-compartment="2">+create(): string</text>
+<text x="0.0" y="30.3" stroke="none" data-name="TesteController" data-compartment="2">+findAll(): string</text>
+<text x="0.0" y="46.5" stroke="none" data-name="TesteController" data-compartment="2">+findOne(): string</text>
+<text x="0.0" y="62.7" stroke="none" data-name="TesteController" data-compartment="2">+update(): string</text>
+<text x="0.0" y="78.9" stroke="none" data-name="TesteController" data-compartment="2">+remove(): string</text>
+
+</g>
+</g>
+</g>
+<g data-name="TesteModule">
+<g fill="#eee8d5" stroke="#33322E" data-name="TesteModule">
+<rect x="10035.0" y="93.0" height="48.0" width="118.0" data-name="TesteModule"></rect>
+<path d="M10035.0 125.0 L10153.0 125.0" fill="none" data-name="TesteModule"></path>
+<path d="M10035.0 133.0 L10153.0 133.0" fill="none" data-name="TesteModule"></path>
+</g>
+<g transform="translate(10035, 93)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="TesteModule" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="TesteModule" data-compartment="0">
+<a id="src/teste/teste.module.ts.TesteModule" xlink:href="src/teste/teste.module.ts"><text x="51.0" y="14.1" stroke="none" text-anchor="middle" data-name="TesteModule" data-compartment="0">TesteModule</text></a>
+
+</g>
+</g>
+<g transform="translate(10035, 125)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="TesteModule" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" data-name="TesteModule" data-compartment="1">
+
+</g>
+</g>
+<g transform="translate(10035, 133)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="TesteModule" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="TesteModule" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="TesteService">
+<g fill="#eee8d5" stroke="#33322E" data-name="TesteService">
+<rect x="10193.0" y="48.5" height="137.0" width="154.0" data-name="TesteService"></rect>
+<path d="M10193.0 80.5 L10347.0 80.5" fill="none" data-name="TesteService"></path>
+<path d="M10193.0 88.5 L10347.0 88.5" fill="none" data-name="TesteService"></path>
+</g>
+<g transform="translate(10193, 48.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="TesteService" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="TesteService" data-compartment="0">
+<a id="src/teste/teste.service.ts.TesteService" xlink:href="src/teste/teste.service.ts"><text x="69.0" y="14.1" stroke="none" text-anchor="middle" data-name="TesteService" data-compartment="0">TesteService</text></a>
+
+</g>
+</g>
+<g transform="translate(10193, 80.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="TesteService" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" data-name="TesteService" data-compartment="1">
+
+</g>
+</g>
+<g transform="translate(10193, 88.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="TesteService" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="TesteService" data-compartment="2">
+<text x="0.0" y="14.1" stroke="none" data-name="TesteService" data-compartment="2">+create(): string</text>
+<text x="0.0" y="30.3" stroke="none" data-name="TesteService" data-compartment="2">+findAll(): string</text>
+<text x="0.0" y="46.5" stroke="none" data-name="TesteService" data-compartment="2">+findOne(): string</text>
+<text x="0.0" y="62.7" stroke="none" data-name="TesteService" data-compartment="2">+update(): string</text>
+<text x="0.0" y="78.9" stroke="none" data-name="TesteService" data-compartment="2">+remove(): string</text>
+
+</g>
+</g>
+</g>
+<g data-name="UserController">
+<g fill="#eee8d5" stroke="#33322E" data-name="UserController">
+<rect x="10387.0" y="36.5" height="161.0" width="294.0" data-name="UserController"></rect>
+<path d="M10387.0 68.5 L10681.0 68.5" fill="none" data-name="UserController"></path>
+<path d="M10387.0 100.5 L10681.0 100.5" fill="none" data-name="UserController"></path>
+</g>
+<g transform="translate(10387, 36.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="UserController" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="UserController" data-compartment="0">
+<a id="src/user/user.controller.ts.UserController" xlink:href="src/user/user.controller.ts"><text x="139.0" y="14.1" stroke="none" text-anchor="middle" data-name="UserController" data-compartment="0">UserController</text></a>
+
+</g>
+</g>
+<g transform="translate(10387, 68.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="UserController" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="UserController" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="UserController" data-compartment="1">-service: UserService</text>
+
+</g>
+</g>
+<g transform="translate(10387, 100.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="UserController" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="UserController" data-compartment="2">
+<text x="0.0" y="14.1" stroke="none" data-name="UserController" data-compartment="2">+create(): Promise&lt;any&gt;</text>
+<text x="0.0" y="30.3" stroke="none" data-name="UserController" data-compartment="2">+findAll(): Promise&lt;User[]&gt;</text>
+<text x="0.0" y="46.5" stroke="none" data-name="UserController" data-compartment="2">+findOne(): Promise&lt;User&gt;</text>
+<text x="0.0" y="62.7" stroke="none" data-name="UserController" data-compartment="2">+update(): Promise&lt;UpdateResult&gt;</text>
+<text x="0.0" y="78.9" stroke="none" data-name="UserController" data-compartment="2">+remove(): Promise&lt;DeleteResult&gt;</text>
+
+</g>
+</g>
+</g>
+<g data-name="UserModule">
+<g fill="#eee8d5" stroke="#33322E" data-name="UserModule">
+<rect x="10721.0" y="93.0" height="48.0" width="111.0" data-name="UserModule"></rect>
+<path d="M10721.0 125.0 L10832.0 125.0" fill="none" data-name="UserModule"></path>
+<path d="M10721.0 133.0 L10832.0 133.0" fill="none" data-name="UserModule"></path>
+</g>
+<g transform="translate(10721, 93)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="UserModule" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="UserModule" data-compartment="0">
+<a id="src/user/user.module.ts.UserModule" xlink:href="src/user/user.module.ts"><text x="47.5" y="14.1" stroke="none" text-anchor="middle" data-name="UserModule" data-compartment="0">UserModule</text></a>
+
+</g>
+</g>
+<g transform="translate(10721, 125)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="UserModule" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" data-name="UserModule" data-compartment="1">
+
+</g>
+</g>
+<g transform="translate(10721, 133)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="UserModule" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="UserModule" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="UserService">
+<g fill="#eee8d5" stroke="#33322E" data-name="UserService">
+<rect x="10872.0" y="36.5" height="161.0" width="294.0" data-name="UserService"></rect>
+<path d="M10872.0 68.5 L11166.0 68.5" fill="none" data-name="UserService"></path>
+<path d="M10872.0 100.5 L11166.0 100.5" fill="none" data-name="UserService"></path>
+</g>
+<g transform="translate(10872, 36.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="UserService" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="UserService" data-compartment="0">
+<a id="src/user/user.service.ts.UserService" xlink:href="src/user/user.service.ts"><text x="139.0" y="14.1" stroke="none" text-anchor="middle" data-name="UserService" data-compartment="0">UserService</text></a>
+
+</g>
+</g>
+<g transform="translate(10872, 68.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="UserService" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="UserService" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="UserService" data-compartment="1">-repo: Repository&lt;User&gt;</text>
+
+</g>
+</g>
+<g transform="translate(10872, 100.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="UserService" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="UserService" data-compartment="2">
+<text x="0.0" y="14.1" stroke="none" data-name="UserService" data-compartment="2">+create(): Promise&lt;any&gt;</text>
+<text x="0.0" y="30.3" stroke="none" data-name="UserService" data-compartment="2">+findAll(): Promise&lt;User[]&gt;</text>
+<text x="0.0" y="46.5" stroke="none" data-name="UserService" data-compartment="2">+findOne(): Promise&lt;User&gt;</text>
+<text x="0.0" y="62.7" stroke="none" data-name="UserService" data-compartment="2">+update(): Promise&lt;UpdateResult&gt;</text>
+<text x="0.0" y="78.9" stroke="none" data-name="UserService" data-compartment="2">+remove(): Promise&lt;DeleteResult&gt;</text>
+
+</g>
+</g>
+</g>
+<g data-name="CreateAddressDto">
+<g fill="#eee8d5" stroke="#33322E" data-name="CreateAddressDto">
+<rect x="11206.0" y="0.0" height="234.0" width="190.0" data-name="CreateAddressDto"></rect>
+<path d="M11206.0 32.0 L11396.0 32.0" fill="none" data-name="CreateAddressDto"></path>
+<path d="M11206.0 226.0 L11396.0 226.0" fill="none" data-name="CreateAddressDto"></path>
+</g>
+<g transform="translate(11206, 0)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="CreateAddressDto" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="CreateAddressDto" data-compartment="0">
+<a id="src/address/dto/create-address.dto.ts.CreateAddressDto" xlink:href="src/address/dto/create-address.dto.ts"><text x="87.0" y="14.1" stroke="none" text-anchor="middle" data-name="CreateAddressDto" data-compartment="0">CreateAddressDto</text></a>
+
+</g>
+</g>
+<g transform="translate(11206, 32)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="CreateAddressDto" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="CreateAddressDto" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="CreateAddressDto" data-compartment="1">+id: number</text>
+<text x="0.0" y="30.3" stroke="none" data-name="CreateAddressDto" data-compartment="1">+userId: number</text>
+<text x="0.0" y="46.5" stroke="none" data-name="CreateAddressDto" data-compartment="1">+street: string</text>
+<text x="0.0" y="62.7" stroke="none" data-name="CreateAddressDto" data-compartment="1">+number: string</text>
+<text x="0.0" y="78.9" stroke="none" data-name="CreateAddressDto" data-compartment="1">+neighborhood: string</text>
+<text x="0.0" y="95.1" stroke="none" data-name="CreateAddressDto" data-compartment="1">+city: string</text>
+<text x="0.0" y="111.3" stroke="none" data-name="CreateAddressDto" data-compartment="1">+state: string</text>
+<text x="0.0" y="127.5" stroke="none" data-name="CreateAddressDto" data-compartment="1">+zipCode: string</text>
+<text x="0.0" y="143.7" stroke="none" data-name="CreateAddressDto" data-compartment="1">+complement?: string</text>
+<text x="0.0" y="159.9" stroke="none" data-name="CreateAddressDto" data-compartment="1">+isDefault: boolean</text>
+<text x="0.0" y="176.1" stroke="none" data-name="CreateAddressDto" data-compartment="1">+createdAt: Date</text>
+
+</g>
+</g>
+<g transform="translate(11206, 226)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="CreateAddressDto" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="CreateAddressDto" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="UpdateAddressDto">
+<g fill="#eee8d5" stroke="#33322E" data-name="UpdateAddressDto">
+<rect x="11436.0" y="24.0" height="186.0" width="200.0" data-name="UpdateAddressDto"></rect>
+<path d="M11436.0 56.0 L11636.0 56.0" fill="none" data-name="UpdateAddressDto"></path>
+<path d="M11436.0 202.0 L11636.0 202.0" fill="none" data-name="UpdateAddressDto"></path>
+</g>
+<g transform="translate(11436, 24)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="UpdateAddressDto" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="UpdateAddressDto" data-compartment="0">
+<a id="src/address/dto/update-address.dto.ts.UpdateAddressDto" xlink:href="src/address/dto/update-address.dto.ts"><text x="92.0" y="14.1" stroke="none" text-anchor="middle" data-name="UpdateAddressDto" data-compartment="0">UpdateAddressDto</text></a>
+
+</g>
+</g>
+<g transform="translate(11436, 56)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="UpdateAddressDto" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="UpdateAddressDto" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="UpdateAddressDto" data-compartment="1">+street?: string</text>
+<text x="0.0" y="30.3" stroke="none" data-name="UpdateAddressDto" data-compartment="1">+number?: string</text>
+<text x="0.0" y="46.5" stroke="none" data-name="UpdateAddressDto" data-compartment="1">+neighborhood?: string</text>
+<text x="0.0" y="62.7" stroke="none" data-name="UpdateAddressDto" data-compartment="1">+city?: string</text>
+<text x="0.0" y="78.9" stroke="none" data-name="UpdateAddressDto" data-compartment="1">+state?: string</text>
+<text x="0.0" y="95.1" stroke="none" data-name="UpdateAddressDto" data-compartment="1">+zipCode?: string</text>
+<text x="0.0" y="111.3" stroke="none" data-name="UpdateAddressDto" data-compartment="1">+complement?: string</text>
+<text x="0.0" y="127.5" stroke="none" data-name="UpdateAddressDto" data-compartment="1">+isDefault?: boolean</text>
+
+</g>
+</g>
+<g transform="translate(11436, 202)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="UpdateAddressDto" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="UpdateAddressDto" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="Address">
+<g fill="#eee8d5" stroke="#33322E" data-name="Address">
+<rect x="11676.0" y="0.0" height="234.0" width="190.0" data-name="Address"></rect>
+<path d="M11676.0 32.0 L11866.0 32.0" fill="none" data-name="Address"></path>
+<path d="M11676.0 226.0 L11866.0 226.0" fill="none" data-name="Address"></path>
+</g>
+<g transform="translate(11676, 0)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="Address" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Address" data-compartment="0">
+<a id="src/address/entities/address.entity.ts.Address" xlink:href="src/address/entities/address.entity.ts"><text x="87.0" y="14.1" stroke="none" text-anchor="middle" data-name="Address" data-compartment="0">Address</text></a>
+
+</g>
+</g>
+<g transform="translate(11676, 32)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Address" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="Address" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="Address" data-compartment="1">+id: number</text>
+<text x="0.0" y="30.3" stroke="none" data-name="Address" data-compartment="1">+user: User</text>
+<text x="0.0" y="46.5" stroke="none" data-name="Address" data-compartment="1">+street: string</text>
+<text x="0.0" y="62.7" stroke="none" data-name="Address" data-compartment="1">+number: string</text>
+<text x="0.0" y="78.9" stroke="none" data-name="Address" data-compartment="1">+neighborhood: string</text>
+<text x="0.0" y="95.1" stroke="none" data-name="Address" data-compartment="1">+city: string</text>
+<text x="0.0" y="111.3" stroke="none" data-name="Address" data-compartment="1">+state: string</text>
+<text x="0.0" y="127.5" stroke="none" data-name="Address" data-compartment="1">+zipCode: string</text>
+<text x="0.0" y="143.7" stroke="none" data-name="Address" data-compartment="1">+complement: string</text>
+<text x="0.0" y="159.9" stroke="none" data-name="Address" data-compartment="1">+isDefault: boolean</text>
+<text x="0.0" y="176.1" stroke="none" data-name="Address" data-compartment="1">+createdAt: Date</text>
+
+</g>
+</g>
+<g transform="translate(11676, 226)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Address" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="Address" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="LoginDto">
+<g fill="#eee8d5" stroke="#33322E" data-name="LoginDto">
+<rect x="11906.0" y="64.5" height="105.0" width="361.0" data-name="LoginDto"></rect>
+<path d="M11906.0 96.5 L12267.0 96.5" fill="none" data-name="LoginDto"></path>
+<path d="M11906.0 161.5 L12267.0 161.5" fill="none" data-name="LoginDto"></path>
+</g>
+<g transform="translate(11906, 64.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="LoginDto" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="LoginDto" data-compartment="0">
+<a id="src/auth/dto/login.dto.ts.LoginDto" xlink:href="src/auth/dto/login.dto.ts"><text x="172.5" y="14.1" stroke="none" text-anchor="middle" data-name="LoginDto" data-compartment="0">LoginDto</text></a>
+
+</g>
+</g>
+<g transform="translate(11906, 96.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="LoginDto" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="LoginDto" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="LoginDto" data-compartment="1">+email: string</text>
+<text x="0.0" y="30.3" stroke="none" data-name="LoginDto" data-compartment="1">+senha: string</text>
+<text x="0.0" y="46.5" stroke="none" data-name="LoginDto" data-compartment="1">+tipo: &quot;cliente&quot; | &quot;restaurante&quot; | &quot;entregador&quot;</text>
+
+</g>
+</g>
+<g transform="translate(11906, 161.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="LoginDto" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="LoginDto" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="RegisterDto">
+<g fill="#eee8d5" stroke="#33322E" data-name="RegisterDto">
+<rect x="12307.0" y="56.5" height="121.0" width="141.0" data-name="RegisterDto"></rect>
+<path d="M12307.0 88.5 L12448.0 88.5" fill="none" data-name="RegisterDto"></path>
+<path d="M12307.0 169.5 L12448.0 169.5" fill="none" data-name="RegisterDto"></path>
+</g>
+<g transform="translate(12307, 56.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="RegisterDto" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="RegisterDto" data-compartment="0">
+<a id="src/auth/dto/register.dto.ts.RegisterDto" xlink:href="src/auth/dto/register.dto.ts"><text x="62.5" y="14.1" stroke="none" text-anchor="middle" data-name="RegisterDto" data-compartment="0">RegisterDto</text></a>
+
+</g>
+</g>
+<g transform="translate(12307, 88.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="RegisterDto" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="RegisterDto" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="RegisterDto" data-compartment="1">+nome: string</text>
+<text x="0.0" y="30.3" stroke="none" data-name="RegisterDto" data-compartment="1">+email: string</text>
+<text x="0.0" y="46.5" stroke="none" data-name="RegisterDto" data-compartment="1">+senha: string</text>
+<text x="0.0" y="62.7" stroke="none" data-name="RegisterDto" data-compartment="1">+tipo: UserType</text>
+
+</g>
+</g>
+<g transform="translate(12307, 169.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="RegisterDto" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="RegisterDto" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="CreateCategoryDto">
+<g fill="#eee8d5" stroke="#33322E" data-name="CreateCategoryDto">
+<rect x="12488.0" y="73.0" height="88.0" width="168.0" data-name="CreateCategoryDto"></rect>
+<path d="M12488.0 105.0 L12656.0 105.0" fill="none" data-name="CreateCategoryDto"></path>
+<path d="M12488.0 153.0 L12656.0 153.0" fill="none" data-name="CreateCategoryDto"></path>
+</g>
+<g transform="translate(12488, 73)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="CreateCategoryDto" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="CreateCategoryDto" data-compartment="0">
+<a id="src/category/dto/create-category.dto.ts.CreateCategoryDto" xlink:href="src/category/dto/create-category.dto.ts"><text x="76.0" y="14.1" stroke="none" text-anchor="middle" data-name="CreateCategoryDto" data-compartment="0">CreateCategoryDto</text></a>
+
+</g>
+</g>
+<g transform="translate(12488, 105)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="CreateCategoryDto" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="CreateCategoryDto" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="CreateCategoryDto" data-compartment="1">+id: number</text>
+<text x="0.0" y="30.3" stroke="none" data-name="CreateCategoryDto" data-compartment="1">+nome: string</text>
+
+</g>
+</g>
+<g transform="translate(12488, 153)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="CreateCategoryDto" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="CreateCategoryDto" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="UpdateCategoryDto">
+<g fill="#eee8d5" stroke="#33322E" data-name="UpdateCategoryDto">
+<rect x="12696.0" y="81.0" height="72.0" width="172.0" data-name="UpdateCategoryDto"></rect>
+<path d="M12696.0 113.0 L12868.0 113.0" fill="none" data-name="UpdateCategoryDto"></path>
+<path d="M12696.0 145.0 L12868.0 145.0" fill="none" data-name="UpdateCategoryDto"></path>
+</g>
+<g transform="translate(12696, 81)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="UpdateCategoryDto" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="UpdateCategoryDto" data-compartment="0">
+<a id="src/category/dto/update-category.dto.ts.UpdateCategoryDto" xlink:href="src/category/dto/update-category.dto.ts"><text x="78.0" y="14.1" stroke="none" text-anchor="middle" data-name="UpdateCategoryDto" data-compartment="0">UpdateCategoryDto</text></a>
+
+</g>
+</g>
+<g transform="translate(12696, 113)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="UpdateCategoryDto" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="UpdateCategoryDto" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="UpdateCategoryDto" data-compartment="1">+nome?: string</text>
+
+</g>
+</g>
+<g transform="translate(12696, 145)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="UpdateCategoryDto" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="UpdateCategoryDto" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="Category">
+<g fill="#eee8d5" stroke="#33322E" data-name="Category">
+<rect x="12908.0" y="64.5" height="105.0" width="176.0" data-name="Category"></rect>
+<path d="M12908.0 96.5 L13084.0 96.5" fill="none" data-name="Category"></path>
+<path d="M12908.0 161.5 L13084.0 161.5" fill="none" data-name="Category"></path>
+</g>
+<g transform="translate(12908, 64.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="Category" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Category" data-compartment="0">
+<a id="src/category/entities/category.entity.ts.Category" xlink:href="src/category/entities/category.entity.ts"><text x="80.0" y="14.1" stroke="none" text-anchor="middle" data-name="Category" data-compartment="0">Category</text></a>
+
+</g>
+</g>
+<g transform="translate(12908, 96.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Category" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="Category" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="Category" data-compartment="1">+id: number</text>
+<text x="0.0" y="30.3" stroke="none" data-name="Category" data-compartment="1">+nome: string</text>
+<text x="0.0" y="46.5" stroke="none" data-name="Category" data-compartment="1">+products: Product[]</text>
+
+</g>
+</g>
+<g transform="translate(12908, 161.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Category" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="Category" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="CreateFavoritRestaurantDto">
+<g fill="#eee8d5" stroke="#33322E" data-name="CreateFavoritRestaurantDto">
+<rect x="13124.0" y="56.5" height="121.0" width="237.0" data-name="CreateFavoritRestaurantDto"></rect>
+<path d="M13124.0 88.5 L13361.0 88.5" fill="none" data-name="CreateFavoritRestaurantDto"></path>
+<path d="M13124.0 169.5 L13361.0 169.5" fill="none" data-name="CreateFavoritRestaurantDto"></path>
+</g>
+<g transform="translate(13124, 56.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="CreateFavoritRestaurantDto" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="CreateFavoritRestaurantDto" data-compartment="0">
+<a id="src/favorit-restaurant/dto/create-favorit-restaurant.dto.ts.CreateFavoritRestaurantDto" xlink:href="src/favorit-restaurant/dto/create-favorit-restaurant.dto.ts"><text x="110.5" y="14.1" stroke="none" text-anchor="middle" data-name="CreateFavoritRestaurantDto" data-compartment="0">CreateFavoritRestaurantDto</text></a>
+
+</g>
+</g>
+<g transform="translate(13124, 88.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="CreateFavoritRestaurantDto" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="CreateFavoritRestaurantDto" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="CreateFavoritRestaurantDto" data-compartment="1">+id: number</text>
+<text x="0.0" y="30.3" stroke="none" data-name="CreateFavoritRestaurantDto" data-compartment="1">+userId: number</text>
+<text x="0.0" y="46.5" stroke="none" data-name="CreateFavoritRestaurantDto" data-compartment="1">+restaurantId: number</text>
+<text x="0.0" y="62.7" stroke="none" data-name="CreateFavoritRestaurantDto" data-compartment="1">+createdAt: Date</text>
+
+</g>
+</g>
+<g transform="translate(13124, 169.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="CreateFavoritRestaurantDto" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="CreateFavoritRestaurantDto" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="UpdateFavoritRestaurantDto">
+<g fill="#eee8d5" stroke="#33322E" data-name="UpdateFavoritRestaurantDto">
+<rect x="13401.0" y="73.0" height="88.0" width="241.0" data-name="UpdateFavoritRestaurantDto"></rect>
+<path d="M13401.0 105.0 L13642.0 105.0" fill="none" data-name="UpdateFavoritRestaurantDto"></path>
+<path d="M13401.0 153.0 L13642.0 153.0" fill="none" data-name="UpdateFavoritRestaurantDto"></path>
+</g>
+<g transform="translate(13401, 73)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="UpdateFavoritRestaurantDto" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="UpdateFavoritRestaurantDto" data-compartment="0">
+<a id="src/favorit-restaurant/dto/update-favorit-restaurant.dto.ts.UpdateFavoritRestaurantDto" xlink:href="src/favorit-restaurant/dto/update-favorit-restaurant.dto.ts"><text x="112.5" y="14.1" stroke="none" text-anchor="middle" data-name="UpdateFavoritRestaurantDto" data-compartment="0">UpdateFavoritRestaurantDto</text></a>
+
+</g>
+</g>
+<g transform="translate(13401, 105)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="UpdateFavoritRestaurantDto" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="UpdateFavoritRestaurantDto" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="UpdateFavoritRestaurantDto" data-compartment="1">+userId?: number</text>
+<text x="0.0" y="30.3" stroke="none" data-name="UpdateFavoritRestaurantDto" data-compartment="1">+restaurantId?: number</text>
+
+</g>
+</g>
+<g transform="translate(13401, 153)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="UpdateFavoritRestaurantDto" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="UpdateFavoritRestaurantDto" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="FavoriteRestaurant">
+<g fill="#eee8d5" stroke="#33322E" data-name="FavoriteRestaurant">
+<rect x="13682.0" y="56.5" height="121.0" width="204.0" data-name="FavoriteRestaurant"></rect>
+<path d="M13682.0 88.5 L13886.0 88.5" fill="none" data-name="FavoriteRestaurant"></path>
+<path d="M13682.0 169.5 L13886.0 169.5" fill="none" data-name="FavoriteRestaurant"></path>
+</g>
+<g transform="translate(13682, 56.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="FavoriteRestaurant" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="FavoriteRestaurant" data-compartment="0">
+<a id="src/favorit-restaurant/entities/favorit-restaurant.entity.ts.FavoriteRestaurant" xlink:href="src/favorit-restaurant/entities/favorit-restaurant.entity.ts"><text x="94.0" y="14.1" stroke="none" text-anchor="middle" data-name="FavoriteRestaurant" data-compartment="0">FavoriteRestaurant</text></a>
+
+</g>
+</g>
+<g transform="translate(13682, 88.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="FavoriteRestaurant" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="FavoriteRestaurant" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="FavoriteRestaurant" data-compartment="1">+id: number</text>
+<text x="0.0" y="30.3" stroke="none" data-name="FavoriteRestaurant" data-compartment="1">+user: User</text>
+<text x="0.0" y="46.5" stroke="none" data-name="FavoriteRestaurant" data-compartment="1">+restaurant: Restaurant</text>
+<text x="0.0" y="62.7" stroke="none" data-name="FavoriteRestaurant" data-compartment="1">+createdAt: Date</text>
+
+</g>
+</g>
+<g transform="translate(13682, 169.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="FavoriteRestaurant" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="FavoriteRestaurant" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="CreateOrderDto">
+<g fill="#eee8d5" stroke="#33322E" data-name="CreateOrderDto">
+<rect x="13926.0" y="48.5" height="137.0" width="192.0" data-name="CreateOrderDto"></rect>
+<path d="M13926.0 80.5 L14118.0 80.5" fill="none" data-name="CreateOrderDto"></path>
+<path d="M13926.0 177.5 L14118.0 177.5" fill="none" data-name="CreateOrderDto"></path>
+</g>
+<g transform="translate(13926, 48.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="CreateOrderDto" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="CreateOrderDto" data-compartment="0">
+<a id="src/order/dto/create-order.dto.ts.CreateOrderDto" xlink:href="src/order/dto/create-order.dto.ts"><text x="88.0" y="14.1" stroke="none" text-anchor="middle" data-name="CreateOrderDto" data-compartment="0">CreateOrderDto</text></a>
+
+</g>
+</g>
+<g transform="translate(13926, 80.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="CreateOrderDto" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="CreateOrderDto" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="CreateOrderDto" data-compartment="1">+id: number</text>
+<text x="0.0" y="30.3" stroke="none" data-name="CreateOrderDto" data-compartment="1">+userId: number</text>
+<text x="0.0" y="46.5" stroke="none" data-name="CreateOrderDto" data-compartment="1">+restaurantId: number</text>
+<text x="0.0" y="62.7" stroke="none" data-name="CreateOrderDto" data-compartment="1">+status: string</text>
+<text x="0.0" y="78.9" stroke="none" data-name="CreateOrderDto" data-compartment="1">+data_pedido: Date</text>
+
+</g>
+</g>
+<g transform="translate(13926, 177.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="CreateOrderDto" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="CreateOrderDto" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="UpdateOrderDto">
+<g fill="#eee8d5" stroke="#33322E" data-name="UpdateOrderDto">
+<rect x="14158.0" y="64.5" height="105.0" width="202.0" data-name="UpdateOrderDto"></rect>
+<path d="M14158.0 96.5 L14360.0 96.5" fill="none" data-name="UpdateOrderDto"></path>
+<path d="M14158.0 161.5 L14360.0 161.5" fill="none" data-name="UpdateOrderDto"></path>
+</g>
+<g transform="translate(14158, 64.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="UpdateOrderDto" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="UpdateOrderDto" data-compartment="0">
+<a id="src/order/dto/update-order.dto.ts.UpdateOrderDto" xlink:href="src/order/dto/update-order.dto.ts"><text x="93.0" y="14.1" stroke="none" text-anchor="middle" data-name="UpdateOrderDto" data-compartment="0">UpdateOrderDto</text></a>
+
+</g>
+</g>
+<g transform="translate(14158, 96.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="UpdateOrderDto" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="UpdateOrderDto" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="UpdateOrderDto" data-compartment="1">+userId?: number</text>
+<text x="0.0" y="30.3" stroke="none" data-name="UpdateOrderDto" data-compartment="1">+restaurantId?: number</text>
+<text x="0.0" y="46.5" stroke="none" data-name="UpdateOrderDto" data-compartment="1">+status?: string</text>
+
+</g>
+</g>
+<g transform="translate(14158, 161.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="UpdateOrderDto" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="UpdateOrderDto" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="Order">
+<g fill="#eee8d5" stroke="#33322E" data-name="Order">
+<rect x="14400.0" y="32.5" height="169.0" width="210.0" data-name="Order"></rect>
+<path d="M14400.0 64.5 L14610.0 64.5" fill="none" data-name="Order"></path>
+<path d="M14400.0 193.5 L14610.0 193.5" fill="none" data-name="Order"></path>
+</g>
+<g transform="translate(14400, 32.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="Order" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Order" data-compartment="0">
+<a id="src/order/entities/order.entity.ts.Order" xlink:href="src/order/entities/order.entity.ts"><text x="97.0" y="14.1" stroke="none" text-anchor="middle" data-name="Order" data-compartment="0">Order</text></a>
+
+</g>
+</g>
+<g transform="translate(14400, 64.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Order" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="Order" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="Order" data-compartment="1">+id: number</text>
+<text x="0.0" y="30.3" stroke="none" data-name="Order" data-compartment="1">+user: User</text>
+<text x="0.0" y="46.5" stroke="none" data-name="Order" data-compartment="1">+restaurant: Restaurant</text>
+<text x="0.0" y="62.7" stroke="none" data-name="Order" data-compartment="1">+status: string</text>
+<text x="0.0" y="78.9" stroke="none" data-name="Order" data-compartment="1">+data_pedido: Date</text>
+<text x="0.0" y="95.1" stroke="none" data-name="Order" data-compartment="1">+orderItems: OrderItem[]</text>
+<text x="0.0" y="111.3" stroke="none" data-name="Order" data-compartment="1">+payment: Payment</text>
+
+</g>
+</g>
+<g transform="translate(14400, 193.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Order" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="Order" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="CreateOrderItemDto">
+<g fill="#eee8d5" stroke="#33322E" data-name="CreateOrderItemDto">
+<rect x="14650.0" y="56.5" height="121.0" width="185.0" data-name="CreateOrderItemDto"></rect>
+<path d="M14650.0 88.5 L14835.0 88.5" fill="none" data-name="CreateOrderItemDto"></path>
+<path d="M14650.0 169.5 L14835.0 169.5" fill="none" data-name="CreateOrderItemDto"></path>
+</g>
+<g transform="translate(14650, 56.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="CreateOrderItemDto" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="CreateOrderItemDto" data-compartment="0">
+<a id="src/order-item/dto/create-order-item.dto.ts.CreateOrderItemDto" xlink:href="src/order-item/dto/create-order-item.dto.ts"><text x="84.5" y="14.1" stroke="none" text-anchor="middle" data-name="CreateOrderItemDto" data-compartment="0">CreateOrderItemDto</text></a>
+
+</g>
+</g>
+<g transform="translate(14650, 88.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="CreateOrderItemDto" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="CreateOrderItemDto" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="CreateOrderItemDto" data-compartment="1">+id: number</text>
+<text x="0.0" y="30.3" stroke="none" data-name="CreateOrderItemDto" data-compartment="1">+orderId: number</text>
+<text x="0.0" y="46.5" stroke="none" data-name="CreateOrderItemDto" data-compartment="1">+productId: number</text>
+<text x="0.0" y="62.7" stroke="none" data-name="CreateOrderItemDto" data-compartment="1">+quantidade: number</text>
+
+</g>
+</g>
+<g transform="translate(14650, 169.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="CreateOrderItemDto" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="CreateOrderItemDto" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="UpdateOrderItemDto">
+<g fill="#eee8d5" stroke="#33322E" data-name="UpdateOrderItemDto">
+<rect x="14875.0" y="64.5" height="105.0" width="195.0" data-name="UpdateOrderItemDto"></rect>
+<path d="M14875.0 96.5 L15070.0 96.5" fill="none" data-name="UpdateOrderItemDto"></path>
+<path d="M14875.0 161.5 L15070.0 161.5" fill="none" data-name="UpdateOrderItemDto"></path>
+</g>
+<g transform="translate(14875, 64.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="UpdateOrderItemDto" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="UpdateOrderItemDto" data-compartment="0">
+<a id="src/order-item/dto/update-order-item.dto.ts.UpdateOrderItemDto" xlink:href="src/order-item/dto/update-order-item.dto.ts"><text x="89.5" y="14.1" stroke="none" text-anchor="middle" data-name="UpdateOrderItemDto" data-compartment="0">UpdateOrderItemDto</text></a>
+
+</g>
+</g>
+<g transform="translate(14875, 96.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="UpdateOrderItemDto" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="UpdateOrderItemDto" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="UpdateOrderItemDto" data-compartment="1">+orderId?: number</text>
+<text x="0.0" y="30.3" stroke="none" data-name="UpdateOrderItemDto" data-compartment="1">+productId?: number</text>
+<text x="0.0" y="46.5" stroke="none" data-name="UpdateOrderItemDto" data-compartment="1">+quantidade?: number</text>
+
+</g>
+</g>
+<g transform="translate(14875, 161.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="UpdateOrderItemDto" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="UpdateOrderItemDto" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="OrderItem">
+<g fill="#eee8d5" stroke="#33322E" data-name="OrderItem">
+<rect x="15110.0" y="56.5" height="121.0" width="185.0" data-name="OrderItem"></rect>
+<path d="M15110.0 88.5 L15295.0 88.5" fill="none" data-name="OrderItem"></path>
+<path d="M15110.0 169.5 L15295.0 169.5" fill="none" data-name="OrderItem"></path>
+</g>
+<g transform="translate(15110, 56.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="OrderItem" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="OrderItem" data-compartment="0">
+<a id="src/order-item/entities/order-item.entity.ts.OrderItem" xlink:href="src/order-item/entities/order-item.entity.ts"><text x="84.5" y="14.1" stroke="none" text-anchor="middle" data-name="OrderItem" data-compartment="0">OrderItem</text></a>
+
+</g>
+</g>
+<g transform="translate(15110, 88.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="OrderItem" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="OrderItem" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="OrderItem" data-compartment="1">+id: number</text>
+<text x="0.0" y="30.3" stroke="none" data-name="OrderItem" data-compartment="1">+order: Order</text>
+<text x="0.0" y="46.5" stroke="none" data-name="OrderItem" data-compartment="1">+product: Product</text>
+<text x="0.0" y="62.7" stroke="none" data-name="OrderItem" data-compartment="1">+quantidade: number</text>
+
+</g>
+</g>
+<g transform="translate(15110, 169.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="OrderItem" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="OrderItem" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="CreatePaymentDto">
+<g fill="#eee8d5" stroke="#33322E" data-name="CreatePaymentDto">
+<rect x="15335.0" y="32.5" height="169.0" width="193.0" data-name="CreatePaymentDto"></rect>
+<path d="M15335.0 64.5 L15528.0 64.5" fill="none" data-name="CreatePaymentDto"></path>
+<path d="M15335.0 193.5 L15528.0 193.5" fill="none" data-name="CreatePaymentDto"></path>
+</g>
+<g transform="translate(15335, 32.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="CreatePaymentDto" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="CreatePaymentDto" data-compartment="0">
+<a id="src/payment/dto/create-payment.dto.ts.CreatePaymentDto" xlink:href="src/payment/dto/create-payment.dto.ts"><text x="88.5" y="14.1" stroke="none" text-anchor="middle" data-name="CreatePaymentDto" data-compartment="0">CreatePaymentDto</text></a>
+
+</g>
+</g>
+<g transform="translate(15335, 64.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="CreatePaymentDto" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="CreatePaymentDto" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="CreatePaymentDto" data-compartment="1">+id: number</text>
+<text x="0.0" y="30.3" stroke="none" data-name="CreatePaymentDto" data-compartment="1">+amount: number</text>
+<text x="0.0" y="46.5" stroke="none" data-name="CreatePaymentDto" data-compartment="1">+method: string</text>
+<text x="0.0" y="62.7" stroke="none" data-name="CreatePaymentDto" data-compartment="1">+status: string</text>
+<text x="0.0" y="78.9" stroke="none" data-name="CreatePaymentDto" data-compartment="1">+transactionId?: string</text>
+<text x="0.0" y="95.1" stroke="none" data-name="CreatePaymentDto" data-compartment="1">+orderId: number</text>
+<text x="0.0" y="111.3" stroke="none" data-name="CreatePaymentDto" data-compartment="1">+createdAt: Date</text>
+
+</g>
+</g>
+<g transform="translate(15335, 193.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="CreatePaymentDto" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="CreatePaymentDto" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="UpdatePaymentDto">
+<g fill="#eee8d5" stroke="#33322E" data-name="UpdatePaymentDto">
+<rect x="15568.0" y="48.5" height="137.0" width="193.0" data-name="UpdatePaymentDto"></rect>
+<path d="M15568.0 80.5 L15761.0 80.5" fill="none" data-name="UpdatePaymentDto"></path>
+<path d="M15568.0 177.5 L15761.0 177.5" fill="none" data-name="UpdatePaymentDto"></path>
+</g>
+<g transform="translate(15568, 48.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="UpdatePaymentDto" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="UpdatePaymentDto" data-compartment="0">
+<a id="src/payment/dto/update-payment.dto.ts.UpdatePaymentDto" xlink:href="src/payment/dto/update-payment.dto.ts"><text x="88.5" y="14.1" stroke="none" text-anchor="middle" data-name="UpdatePaymentDto" data-compartment="0">UpdatePaymentDto</text></a>
+
+</g>
+</g>
+<g transform="translate(15568, 80.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="UpdatePaymentDto" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="UpdatePaymentDto" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="UpdatePaymentDto" data-compartment="1">+amount?: number</text>
+<text x="0.0" y="30.3" stroke="none" data-name="UpdatePaymentDto" data-compartment="1">+method?: string</text>
+<text x="0.0" y="46.5" stroke="none" data-name="UpdatePaymentDto" data-compartment="1">+status?: string</text>
+<text x="0.0" y="62.7" stroke="none" data-name="UpdatePaymentDto" data-compartment="1">+transactionId?: string</text>
+<text x="0.0" y="78.9" stroke="none" data-name="UpdatePaymentDto" data-compartment="1">+orderId?: number</text>
+
+</g>
+</g>
+<g transform="translate(15568, 177.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="UpdatePaymentDto" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="UpdatePaymentDto" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="Payment">
+<g fill="#eee8d5" stroke="#33322E" data-name="Payment">
+<rect x="15801.0" y="32.5" height="169.0" width="183.0" data-name="Payment"></rect>
+<path d="M15801.0 64.5 L15984.0 64.5" fill="none" data-name="Payment"></path>
+<path d="M15801.0 193.5 L15984.0 193.5" fill="none" data-name="Payment"></path>
+</g>
+<g transform="translate(15801, 32.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="Payment" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Payment" data-compartment="0">
+<a id="src/payment/entities/payment.entity.ts.Payment" xlink:href="src/payment/entities/payment.entity.ts"><text x="83.5" y="14.1" stroke="none" text-anchor="middle" data-name="Payment" data-compartment="0">Payment</text></a>
+
+</g>
+</g>
+<g transform="translate(15801, 64.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Payment" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="Payment" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="Payment" data-compartment="1">+id: number</text>
+<text x="0.0" y="30.3" stroke="none" data-name="Payment" data-compartment="1">+amount: number</text>
+<text x="0.0" y="46.5" stroke="none" data-name="Payment" data-compartment="1">+method: string</text>
+<text x="0.0" y="62.7" stroke="none" data-name="Payment" data-compartment="1">+status: string</text>
+<text x="0.0" y="78.9" stroke="none" data-name="Payment" data-compartment="1">+transactionId: string</text>
+<text x="0.0" y="95.1" stroke="none" data-name="Payment" data-compartment="1">+order: Order</text>
+<text x="0.0" y="111.3" stroke="none" data-name="Payment" data-compartment="1">+createdAt: Date</text>
+
+</g>
+</g>
+<g transform="translate(15801, 193.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Payment" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="Payment" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="CreateProductDto">
+<g fill="#eee8d5" stroke="#33322E" data-name="CreateProductDto">
+<rect x="16024.0" y="48.5" height="137.0" width="192.0" data-name="CreateProductDto"></rect>
+<path d="M16024.0 80.5 L16216.0 80.5" fill="none" data-name="CreateProductDto"></path>
+<path d="M16024.0 177.5 L16216.0 177.5" fill="none" data-name="CreateProductDto"></path>
+</g>
+<g transform="translate(16024, 48.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="CreateProductDto" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="CreateProductDto" data-compartment="0">
+<a id="src/product/dto/create-product.dto.ts.CreateProductDto" xlink:href="src/product/dto/create-product.dto.ts"><text x="88.0" y="14.1" stroke="none" text-anchor="middle" data-name="CreateProductDto" data-compartment="0">CreateProductDto</text></a>
+
+</g>
+</g>
+<g transform="translate(16024, 80.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="CreateProductDto" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="CreateProductDto" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="CreateProductDto" data-compartment="1">+id: number</text>
+<text x="0.0" y="30.3" stroke="none" data-name="CreateProductDto" data-compartment="1">+nome: string</text>
+<text x="0.0" y="46.5" stroke="none" data-name="CreateProductDto" data-compartment="1">+preco: number</text>
+<text x="0.0" y="62.7" stroke="none" data-name="CreateProductDto" data-compartment="1">+restaurantId: number</text>
+<text x="0.0" y="78.9" stroke="none" data-name="CreateProductDto" data-compartment="1">+categoryId: number</text>
+
+</g>
+</g>
+<g transform="translate(16024, 177.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="CreateProductDto" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="CreateProductDto" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="UpdateProductDto">
+<g fill="#eee8d5" stroke="#33322E" data-name="UpdateProductDto">
+<rect x="16256.0" y="56.5" height="121.0" width="202.0" data-name="UpdateProductDto"></rect>
+<path d="M16256.0 88.5 L16458.0 88.5" fill="none" data-name="UpdateProductDto"></path>
+<path d="M16256.0 169.5 L16458.0 169.5" fill="none" data-name="UpdateProductDto"></path>
+</g>
+<g transform="translate(16256, 56.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="UpdateProductDto" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="UpdateProductDto" data-compartment="0">
+<a id="src/product/dto/update-product.dto.ts.UpdateProductDto" xlink:href="src/product/dto/update-product.dto.ts"><text x="93.0" y="14.1" stroke="none" text-anchor="middle" data-name="UpdateProductDto" data-compartment="0">UpdateProductDto</text></a>
+
+</g>
+</g>
+<g transform="translate(16256, 88.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="UpdateProductDto" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="UpdateProductDto" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="UpdateProductDto" data-compartment="1">+nome?: string</text>
+<text x="0.0" y="30.3" stroke="none" data-name="UpdateProductDto" data-compartment="1">+preco?: number</text>
+<text x="0.0" y="46.5" stroke="none" data-name="UpdateProductDto" data-compartment="1">+restaurantId?: number</text>
+<text x="0.0" y="62.7" stroke="none" data-name="UpdateProductDto" data-compartment="1">+categoryId?: number</text>
+
+</g>
+</g>
+<g transform="translate(16256, 169.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="UpdateProductDto" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="UpdateProductDto" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="Product">
+<g fill="#eee8d5" stroke="#33322E" data-name="Product">
+<rect x="16498.0" y="40.5" height="153.0" width="210.0" data-name="Product"></rect>
+<path d="M16498.0 72.5 L16708.0 72.5" fill="none" data-name="Product"></path>
+<path d="M16498.0 185.5 L16708.0 185.5" fill="none" data-name="Product"></path>
+</g>
+<g transform="translate(16498, 40.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="Product" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Product" data-compartment="0">
+<a id="src/product/entities/product.entity.ts.Product" xlink:href="src/product/entities/product.entity.ts"><text x="97.0" y="14.1" stroke="none" text-anchor="middle" data-name="Product" data-compartment="0">Product</text></a>
+
+</g>
+</g>
+<g transform="translate(16498, 72.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Product" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="Product" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="Product" data-compartment="1">+id: number</text>
+<text x="0.0" y="30.3" stroke="none" data-name="Product" data-compartment="1">+nome: string</text>
+<text x="0.0" y="46.5" stroke="none" data-name="Product" data-compartment="1">+preco: number</text>
+<text x="0.0" y="62.7" stroke="none" data-name="Product" data-compartment="1">+restaurant: Restaurant</text>
+<text x="0.0" y="78.9" stroke="none" data-name="Product" data-compartment="1">+category: Category</text>
+<text x="0.0" y="95.1" stroke="none" data-name="Product" data-compartment="1">+orderItems: OrderItem[]</text>
+
+</g>
+</g>
+<g transform="translate(16498, 185.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Product" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="Product" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="CreateRestaurantDto">
+<g fill="#eee8d5" stroke="#33322E" data-name="CreateRestaurantDto">
+<rect x="16748.0" y="48.5" height="137.0" width="344.0" data-name="CreateRestaurantDto"></rect>
+<path d="M16748.0 80.5 L17092.0 80.5" fill="none" data-name="CreateRestaurantDto"></path>
+<path d="M16748.0 177.5 L17092.0 177.5" fill="none" data-name="CreateRestaurantDto"></path>
+</g>
+<g transform="translate(16748, 48.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="CreateRestaurantDto" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="CreateRestaurantDto" data-compartment="0">
+<a id="src/restaurant/dto/create-restaurant.dto.ts.CreateRestaurantDto" xlink:href="src/restaurant/dto/create-restaurant.dto.ts"><text x="164.0" y="14.1" stroke="none" text-anchor="middle" data-name="CreateRestaurantDto" data-compartment="0">CreateRestaurantDto</text></a>
+
+</g>
+</g>
+<g transform="translate(16748, 80.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="CreateRestaurantDto" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="CreateRestaurantDto" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="CreateRestaurantDto" data-compartment="1">+id: number</text>
+<text x="0.0" y="30.3" stroke="none" data-name="CreateRestaurantDto" data-compartment="1">+nome: string</text>
+<text x="0.0" y="46.5" stroke="none" data-name="CreateRestaurantDto" data-compartment="1">+endereco: string</text>
+<text x="0.0" y="62.7" stroke="none" data-name="CreateRestaurantDto" data-compartment="1">+telefone: string</text>
+<text x="0.0" y="78.9" stroke="none" data-name="CreateRestaurantDto" data-compartment="1">+tipo: &quot;fast_food&quot; | &quot;casual&quot; | &quot;fine_dining&quot;</text>
+
+</g>
+</g>
+<g transform="translate(16748, 177.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="CreateRestaurantDto" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="CreateRestaurantDto" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="UpdateRestaurantDto">
+<g fill="#eee8d5" stroke="#33322E" data-name="UpdateRestaurantDto">
+<rect x="17132.0" y="56.5" height="121.0" width="354.0" data-name="UpdateRestaurantDto"></rect>
+<path d="M17132.0 88.5 L17486.0 88.5" fill="none" data-name="UpdateRestaurantDto"></path>
+<path d="M17132.0 169.5 L17486.0 169.5" fill="none" data-name="UpdateRestaurantDto"></path>
+</g>
+<g transform="translate(17132, 56.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="UpdateRestaurantDto" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="UpdateRestaurantDto" data-compartment="0">
+<a id="src/restaurant/dto/update-restaurant.dto.ts.UpdateRestaurantDto" xlink:href="src/restaurant/dto/update-restaurant.dto.ts"><text x="169.0" y="14.1" stroke="none" text-anchor="middle" data-name="UpdateRestaurantDto" data-compartment="0">UpdateRestaurantDto</text></a>
+
+</g>
+</g>
+<g transform="translate(17132, 88.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="UpdateRestaurantDto" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="UpdateRestaurantDto" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="UpdateRestaurantDto" data-compartment="1">+nome?: string</text>
+<text x="0.0" y="30.3" stroke="none" data-name="UpdateRestaurantDto" data-compartment="1">+endereco?: string</text>
+<text x="0.0" y="46.5" stroke="none" data-name="UpdateRestaurantDto" data-compartment="1">+telefone?: string</text>
+<text x="0.0" y="62.7" stroke="none" data-name="UpdateRestaurantDto" data-compartment="1">+tipo?: &quot;fast_food&quot; | &quot;casual&quot; | &quot;fine_dining&quot;</text>
+
+</g>
+</g>
+<g transform="translate(17132, 169.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="UpdateRestaurantDto" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="UpdateRestaurantDto" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="Restaurant">
+<g fill="#eee8d5" stroke="#33322E" data-name="Restaurant">
+<rect x="17526.0" y="16.0" height="202.0" width="344.0" data-name="Restaurant"></rect>
+<path d="M17526.0 48.0 L17870.0 48.0" fill="none" data-name="Restaurant"></path>
+<path d="M17526.0 210.0 L17870.0 210.0" fill="none" data-name="Restaurant"></path>
+</g>
+<g transform="translate(17526, 16)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="Restaurant" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Restaurant" data-compartment="0">
+<a id="src/restaurant/entities/restaurant.entity.ts.Restaurant" xlink:href="src/restaurant/entities/restaurant.entity.ts"><text x="164.0" y="14.1" stroke="none" text-anchor="middle" data-name="Restaurant" data-compartment="0">Restaurant</text></a>
+
+</g>
+</g>
+<g transform="translate(17526, 48)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Restaurant" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="Restaurant" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="Restaurant" data-compartment="1">+id: number</text>
+<text x="0.0" y="30.3" stroke="none" data-name="Restaurant" data-compartment="1">+nome: string</text>
+<text x="0.0" y="46.5" stroke="none" data-name="Restaurant" data-compartment="1">+endereco: string</text>
+<text x="0.0" y="62.7" stroke="none" data-name="Restaurant" data-compartment="1">+telefone: string</text>
+<text x="0.0" y="78.9" stroke="none" data-name="Restaurant" data-compartment="1">+tipo: &quot;fast_food&quot; | &quot;casual&quot; | &quot;fine_dining&quot;</text>
+<text x="0.0" y="95.1" stroke="none" data-name="Restaurant" data-compartment="1">+products: Product[]</text>
+<text x="0.0" y="111.3" stroke="none" data-name="Restaurant" data-compartment="1">+orders: Order[]</text>
+<text x="0.0" y="127.5" stroke="none" data-name="Restaurant" data-compartment="1">+favorites: FavoriteRestaurant[]</text>
+<text x="0.0" y="143.7" stroke="none" data-name="Restaurant" data-compartment="1">+reviews: Review[]</text>
+
+</g>
+</g>
+<g transform="translate(17526, 210)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Restaurant" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="Restaurant" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="CreateReviewDto">
+<g fill="#eee8d5" stroke="#33322E" data-name="CreateReviewDto">
+<rect x="17910.0" y="40.5" height="153.0" width="192.0" data-name="CreateReviewDto"></rect>
+<path d="M17910.0 72.5 L18102.0 72.5" fill="none" data-name="CreateReviewDto"></path>
+<path d="M17910.0 185.5 L18102.0 185.5" fill="none" data-name="CreateReviewDto"></path>
+</g>
+<g transform="translate(17910, 40.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="CreateReviewDto" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="CreateReviewDto" data-compartment="0">
+<a id="src/review/dto/create-review.dto.ts.CreateReviewDto" xlink:href="src/review/dto/create-review.dto.ts"><text x="88.0" y="14.1" stroke="none" text-anchor="middle" data-name="CreateReviewDto" data-compartment="0">CreateReviewDto</text></a>
+
+</g>
+</g>
+<g transform="translate(17910, 72.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="CreateReviewDto" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="CreateReviewDto" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="CreateReviewDto" data-compartment="1">+id: number</text>
+<text x="0.0" y="30.3" stroke="none" data-name="CreateReviewDto" data-compartment="1">+userId: number</text>
+<text x="0.0" y="46.5" stroke="none" data-name="CreateReviewDto" data-compartment="1">+restaurantId: number</text>
+<text x="0.0" y="62.7" stroke="none" data-name="CreateReviewDto" data-compartment="1">+rating: number</text>
+<text x="0.0" y="78.9" stroke="none" data-name="CreateReviewDto" data-compartment="1">+comentario?: string</text>
+<text x="0.0" y="95.1" stroke="none" data-name="CreateReviewDto" data-compartment="1">+createdAt: Date</text>
+
+</g>
+</g>
+<g transform="translate(17910, 185.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="CreateReviewDto" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="CreateReviewDto" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="UpdateReviewDto">
+<g fill="#eee8d5" stroke="#33322E" data-name="UpdateReviewDto">
+<rect x="18142.0" y="56.5" height="121.0" width="202.0" data-name="UpdateReviewDto"></rect>
+<path d="M18142.0 88.5 L18344.0 88.5" fill="none" data-name="UpdateReviewDto"></path>
+<path d="M18142.0 169.5 L18344.0 169.5" fill="none" data-name="UpdateReviewDto"></path>
+</g>
+<g transform="translate(18142, 56.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="UpdateReviewDto" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="UpdateReviewDto" data-compartment="0">
+<a id="src/review/dto/update-review.dto.ts.UpdateReviewDto" xlink:href="src/review/dto/update-review.dto.ts"><text x="93.0" y="14.1" stroke="none" text-anchor="middle" data-name="UpdateReviewDto" data-compartment="0">UpdateReviewDto</text></a>
+
+</g>
+</g>
+<g transform="translate(18142, 88.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="UpdateReviewDto" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="UpdateReviewDto" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="UpdateReviewDto" data-compartment="1">+userId?: number</text>
+<text x="0.0" y="30.3" stroke="none" data-name="UpdateReviewDto" data-compartment="1">+restaurantId?: number</text>
+<text x="0.0" y="46.5" stroke="none" data-name="UpdateReviewDto" data-compartment="1">+rating?: number</text>
+<text x="0.0" y="62.7" stroke="none" data-name="UpdateReviewDto" data-compartment="1">+comentario?: string</text>
+
+</g>
+</g>
+<g transform="translate(18142, 169.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="UpdateReviewDto" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="UpdateReviewDto" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="Review">
+<g fill="#eee8d5" stroke="#33322E" data-name="Review">
+<rect x="18384.0" y="40.5" height="153.0" width="204.0" data-name="Review"></rect>
+<path d="M18384.0 72.5 L18588.0 72.5" fill="none" data-name="Review"></path>
+<path d="M18384.0 185.5 L18588.0 185.5" fill="none" data-name="Review"></path>
+</g>
+<g transform="translate(18384, 40.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="Review" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Review" data-compartment="0">
+<a id="src/review/entities/review.entity.ts.Review" xlink:href="src/review/entities/review.entity.ts"><text x="94.0" y="14.1" stroke="none" text-anchor="middle" data-name="Review" data-compartment="0">Review</text></a>
+
+</g>
+</g>
+<g transform="translate(18384, 72.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Review" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="Review" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="Review" data-compartment="1">+id: number</text>
+<text x="0.0" y="30.3" stroke="none" data-name="Review" data-compartment="1">+user: User</text>
+<text x="0.0" y="46.5" stroke="none" data-name="Review" data-compartment="1">+restaurant: Restaurant</text>
+<text x="0.0" y="62.7" stroke="none" data-name="Review" data-compartment="1">+rating: number</text>
+<text x="0.0" y="78.9" stroke="none" data-name="Review" data-compartment="1">+comentario: string</text>
+<text x="0.0" y="95.1" stroke="none" data-name="Review" data-compartment="1">+createdAt: Date</text>
+
+</g>
+</g>
+<g transform="translate(18384, 185.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Review" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="Review" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="CreateTesteDto">
+<g fill="#eee8d5" stroke="#33322E" data-name="CreateTesteDto">
+<rect x="18628.0" y="93.0" height="48.0" width="140.0" data-name="CreateTesteDto"></rect>
+<path d="M18628.0 125.0 L18768.0 125.0" fill="none" data-name="CreateTesteDto"></path>
+<path d="M18628.0 133.0 L18768.0 133.0" fill="none" data-name="CreateTesteDto"></path>
+</g>
+<g transform="translate(18628, 93)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="CreateTesteDto" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="CreateTesteDto" data-compartment="0">
+<a id="src/teste/dto/create-teste.dto.ts.CreateTesteDto" xlink:href="src/teste/dto/create-teste.dto.ts"><text x="62.0" y="14.1" stroke="none" text-anchor="middle" data-name="CreateTesteDto" data-compartment="0">CreateTesteDto</text></a>
+
+</g>
+</g>
+<g transform="translate(18628, 125)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="CreateTesteDto" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" data-name="CreateTesteDto" data-compartment="1">
+
+</g>
+</g>
+<g transform="translate(18628, 133)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="CreateTesteDto" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="CreateTesteDto" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="UpdateTesteDto">
+<g fill="#eee8d5" stroke="#33322E" data-name="UpdateTesteDto">
+<rect x="18808.0" y="93.0" height="48.0" width="144.0" data-name="UpdateTesteDto"></rect>
+<path d="M18808.0 125.0 L18952.0 125.0" fill="none" data-name="UpdateTesteDto"></path>
+<path d="M18808.0 133.0 L18952.0 133.0" fill="none" data-name="UpdateTesteDto"></path>
+</g>
+<g transform="translate(18808, 93)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="UpdateTesteDto" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="UpdateTesteDto" data-compartment="0">
+<a id="src/teste/dto/update-teste.dto.ts.UpdateTesteDto" xlink:href="src/teste/dto/update-teste.dto.ts"><text x="64.0" y="14.1" stroke="none" text-anchor="middle" data-name="UpdateTesteDto" data-compartment="0">UpdateTesteDto</text></a>
+
+</g>
+</g>
+<g transform="translate(18808, 125)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="UpdateTesteDto" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" data-name="UpdateTesteDto" data-compartment="1">
+
+</g>
+</g>
+<g transform="translate(18808, 133)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="UpdateTesteDto" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="UpdateTesteDto" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="Teste">
+<g fill="#eee8d5" stroke="#33322E" data-name="Teste">
+<rect x="18992.0" y="93.0" height="48.0" width="60.0" data-name="Teste"></rect>
+<path d="M18992.0 125.0 L19052.0 125.0" fill="none" data-name="Teste"></path>
+<path d="M18992.0 133.0 L19052.0 133.0" fill="none" data-name="Teste"></path>
+</g>
+<g transform="translate(18992, 93)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="Teste" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Teste" data-compartment="0">
+<a id="src/teste/entities/teste.entity.ts.Teste" xlink:href="src/teste/entities/teste.entity.ts"><text x="22.0" y="14.1" stroke="none" text-anchor="middle" data-name="Teste" data-compartment="0">Teste</text></a>
+
+</g>
+</g>
+<g transform="translate(18992, 125)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Teste" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" data-name="Teste" data-compartment="1">
+
+</g>
+</g>
+<g transform="translate(18992, 133)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Teste" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="Teste" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="CreateUserDto">
+<g fill="#eee8d5" stroke="#33322E" data-name="CreateUserDto">
+<rect x="19092.0" y="56.5" height="121.0" width="361.0" data-name="CreateUserDto"></rect>
+<path d="M19092.0 88.5 L19453.0 88.5" fill="none" data-name="CreateUserDto"></path>
+<path d="M19092.0 169.5 L19453.0 169.5" fill="none" data-name="CreateUserDto"></path>
+</g>
+<g transform="translate(19092, 56.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="CreateUserDto" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="CreateUserDto" data-compartment="0">
+<a id="src/user/dto/create-user.dto.ts.CreateUserDto" xlink:href="src/user/dto/create-user.dto.ts"><text x="172.5" y="14.1" stroke="none" text-anchor="middle" data-name="CreateUserDto" data-compartment="0">CreateUserDto</text></a>
+
+</g>
+</g>
+<g transform="translate(19092, 88.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="CreateUserDto" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="CreateUserDto" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="CreateUserDto" data-compartment="1">+id: number</text>
+<text x="0.0" y="30.3" stroke="none" data-name="CreateUserDto" data-compartment="1">+nome: string</text>
+<text x="0.0" y="46.5" stroke="none" data-name="CreateUserDto" data-compartment="1">+email: string</text>
+<text x="0.0" y="62.7" stroke="none" data-name="CreateUserDto" data-compartment="1">+tipo: &quot;cliente&quot; | &quot;restaurante&quot; | &quot;entregador&quot;</text>
+
+</g>
+</g>
+<g transform="translate(19092, 169.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="CreateUserDto" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="CreateUserDto" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="UpdateUserDto">
+<g fill="#eee8d5" stroke="#33322E" data-name="UpdateUserDto">
+<rect x="19493.0" y="56.5" height="121.0" width="371.0" data-name="UpdateUserDto"></rect>
+<path d="M19493.0 88.5 L19864.0 88.5" fill="none" data-name="UpdateUserDto"></path>
+<path d="M19493.0 169.5 L19864.0 169.5" fill="none" data-name="UpdateUserDto"></path>
+</g>
+<g transform="translate(19493, 56.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="UpdateUserDto" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="UpdateUserDto" data-compartment="0">
+<a id="src/user/dto/update-user.dto.ts.UpdateUserDto" xlink:href="src/user/dto/update-user.dto.ts"><text x="177.5" y="14.1" stroke="none" text-anchor="middle" data-name="UpdateUserDto" data-compartment="0">UpdateUserDto</text></a>
+
+</g>
+</g>
+<g transform="translate(19493, 88.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="UpdateUserDto" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="UpdateUserDto" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="UpdateUserDto" data-compartment="1">+nome?: string</text>
+<text x="0.0" y="30.3" stroke="none" data-name="UpdateUserDto" data-compartment="1">+email?: string</text>
+<text x="0.0" y="46.5" stroke="none" data-name="UpdateUserDto" data-compartment="1">+senha?: string</text>
+<text x="0.0" y="62.7" stroke="none" data-name="UpdateUserDto" data-compartment="1">+tipo?: &quot;cliente&quot; | &quot;restaurante&quot; | &quot;entregador&quot;</text>
+
+</g>
+</g>
+<g transform="translate(19493, 169.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="UpdateUserDto" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="UpdateUserDto" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="UserType">
+<g fill="lightgreen" stroke="#33322E" data-name="UserType">
+<rect x="19904.0" y="68.5" height="97.0" width="133.0" data-name="UserType"></rect>
+<path d="M19904.0 100.5 L20037.0 100.5" fill="none" data-name="UserType"></path>
+</g>
+<g transform="translate(19904, 68.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="UserType" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="UserType" data-compartment="0">
+<a id="src/user/entities/user-type.enum.ts.UserType" xlink:href="src/user/entities/user-type.enum.ts"><text x="58.5" y="14.1" stroke="none" text-anchor="middle" data-name="UserType" data-compartment="0">UserType</text></a>
+
+</g>
+</g>
+<g transform="translate(19904, 100.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="UserType" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="UserType" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="UserType" data-compartment="1">CLIENTE</text>
+<text x="0.0" y="30.3" stroke="none" data-name="UserType" data-compartment="1">LOJA</text>
+<text x="0.0" y="46.5" stroke="none" data-name="UserType" data-compartment="1">ENTREGADOR</text>
+
+</g>
+</g>
+</g>
+<g data-name="User">
+<g fill="#eee8d5" stroke="#33322E" data-name="User">
+<rect x="20077.0" y="16.0" height="202.0" width="265.0" data-name="User"></rect>
+<path d="M20077.0 48.0 L20342.0 48.0" fill="none" data-name="User"></path>
+<path d="M20077.0 210.0 L20342.0 210.0" fill="none" data-name="User"></path>
+</g>
+<g transform="translate(20077, 16)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="User" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="User" data-compartment="0">
+<a id="src/user/entities/user.entity.ts.User" xlink:href="src/user/entities/user.entity.ts"><text x="124.5" y="14.1" stroke="none" text-anchor="middle" data-name="User" data-compartment="0">User</text></a>
+
+</g>
+</g>
+<g transform="translate(20077, 48)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="User" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="User" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="User" data-compartment="1">+id: number</text>
+<text x="0.0" y="30.3" stroke="none" data-name="User" data-compartment="1">+nome: string</text>
+<text x="0.0" y="46.5" stroke="none" data-name="User" data-compartment="1">+email: string</text>
+<text x="0.0" y="62.7" stroke="none" data-name="User" data-compartment="1">+senha: string</text>
+<text x="0.0" y="78.9" stroke="none" data-name="User" data-compartment="1">+tipo: UserType</text>
+<text x="0.0" y="95.1" stroke="none" data-name="User" data-compartment="1">+orders: Order[]</text>
+<text x="0.0" y="111.3" stroke="none" data-name="User" data-compartment="1">+addresses: Address[]</text>
+<text x="0.0" y="127.5" stroke="none" data-name="User" data-compartment="1">+favorites: FavoriteRestaurant[]</text>
+<text x="0.0" y="143.7" stroke="none" data-name="User" data-compartment="1">+reviews: Review[]</text>
+
+</g>
+</g>
+<g transform="translate(20077, 210)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="User" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="User" data-compartment="2">
+
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</svg>

@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Param, Put, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Param, Put, Delete, Query } from '@nestjs/common';
 import { ProductService } from './product.service';
 import { Product } from 'src/product/entities/product.entity';
 import { ApiTags } from '@nestjs/swagger';
@@ -32,4 +32,11 @@ export class ProductController {
   remove(@Param('id') id: number) {
     return this.service.remove(id);
   }
+  @Get()
+    findAllByRestaurant(@Query('restaurantId') restaurantId?: number) {
+      if (restaurantId) {
+        return this.service.findByRestaurant(Number(restaurantId));
+      }
+      return this.service.findAll();
+    }
 }

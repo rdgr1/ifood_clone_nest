@@ -14,12 +14,32 @@ export class ProductService {
     return this.repo.save(data);
   }
 
-  findAll() {
-    return this.repo.find();
+  async findByRestaurant(restaurantId: number) {
+    const produtos = await this.repo.find({
+      where: { restaurant: { id: restaurantId } },
+      relations: ['category', 'restaurant'],
+    });
+
+    return produtos.map(p => ({
+      ...p,
+      preco: parseFloat(p.preco as any),
+    }));
   }
 
-  findOne(id: number) {
-    return this.repo.findOne({ where: { id } });
+  async findAll() {
+    const produtos = await this.repo.find();
+    return produtos.map(p => ({
+      ...p,
+      preco: parseFloat(p.preco as any),
+    }));
+  }
+
+  async findOne(id: number) {
+    const produto = await this.repo.findOne({ where: { id } });
+    return {
+      ...produto,
+      preco: parseFloat(produto?.preco as any),
+    };
   }
 
   update(id: number, data: Partial<Product>) {
